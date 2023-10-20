@@ -1,35 +1,25 @@
 // file login.js
-export function login() {
-  const section = document.createElement('section');
-  section.setAttribute('class', 'container');
-  const title = document.createElement('h1');
-  title.setAttribute('class', 'title');
-  const buttonGoogle = document.createElement('button');
-  buttonGoogle.setAttribute('class', 'button-google');
-  const form = document.createElement('form');
-  form.setAttribute('class', 'form');
-  const inputEmail = document.createElement('input');
-  inputEmail.setAttribute('class', 'email');
-  const inputPass = document.createElement('input');
-  inputPass.setAttribute('class', 'password');
-  const buttonLogin = document.createElement('button');
-  buttonLogin.setAttribute('class', 'button-login');
-  const checking = document.createElement('button');
-  checking.setAttribute('class', 'checking');
-
-
-
-  title.textContent = 'Fit Sync';
-  inputEmail.placeholder = 'Escribir email';
-  inputPass.placeholder = 'Contraseña';
-  buttonLogin.textContent = 'Ingresar';
-  checking.textContent = 'Regístrate';
-  buttonGoogle.textContent = 'Ingresar con Google';
-
-  form.append(inputEmail, inputPass, buttonLogin);
-  section.append(title, form, buttonGoogle, checking);
-  console.log(login);
-  return section;
-}
-
-export default login;
+function login() {
+    const section = document.createElement('section');
+    const title = document.createElement('h2');
+    const buttonReturn = document.createElement('button');
+    const form = document.createElement('form');
+    const inputEmail = document.createElement('input');
+    const inputPass = document.createElement('input');
+    const buttonLogin = document.createElement('button');
+  
+    inputEmail.placeholder = 'Escribir email';
+    inputPass.placeholder = 'contraseña';
+  
+    title.textContent = 'Regístrate';
+    buttonLogin.textContent = 'ingresar';
+  
+    buttonReturn.textContent = 'Volver al inicio';
+  
+    form.append(inputEmail, inputPass, buttonLogin);
+    section.append(title, form, buttonReturn);
+  
+    return section;
+  }
+  
+  export default login;
