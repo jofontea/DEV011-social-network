@@ -16,18 +16,22 @@ export function login() {
   buttonLogin.setAttribute('class', 'button-login');
   const checking = document.createElement('button');
   checking.setAttribute('class', 'checking');
+  const imgLogo = document.createElement('img');
+  imgLogo.setAttribute('class', 'img-logo');
+  imgLogo.setAttribute('src', 'logo app Fit Sync.png');
+
 
 
 
   title.textContent = 'Fit Sync';
-  inputEmail.placeholder = 'Escribir email';
+  inputEmail.placeholder = 'Correo electrónico';
   inputPass.placeholder = 'Contraseña';
   buttonLogin.textContent = 'Ingresar';
   checking.textContent = 'Regístrate';
   buttonGoogle.textContent = 'Ingresar con Google';
 
-  form.append(inputEmail, inputPass, buttonLogin);
-  section.append(title, form, buttonGoogle, checking);
+  form.append( imgLogo, inputEmail, inputPass, buttonLogin);
+  section.append(title, form, buttonGoogle, checking,);
   console.log(login);
   return section;
 }

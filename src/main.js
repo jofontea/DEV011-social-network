@@ -16,6 +16,7 @@ const root = document.getElementById("root");
 const loginSection = login();
 root.appendChild(loginSection);
 
+
 // function navigateTo(hash) {
 //   const route = routes.find((routeFound) => routeFound.path === hash);
 

@@ -1,37 +1,60 @@
 .container {
-    background-color: #050834;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background-color: #050834;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.img-logo {
+  border-radius: 20px;
+  width: 176px;
+  height: 170px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
 .title {
-    background-color: #7cb8f2;
-    width: 194px;
-    height: 62px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    justify-content: center;
-    display: inherit;
-    align-items: center;
-    
+  background-color: #7cb8f2;
+  width: 194px;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
 }
 
-.email,.password {
- background-color:#050834;
- color:white;
- box-shadow: 0px 1px 2px 0px #7cb8f2;
- text-align: center;
- margin: 10px;
+.email,
+.password {
+  background-color: #050834;
+  color: white;
+  box-shadow: 0px 1px 2px 0px #7cb8f2;
+  text-align: center;
+  margin: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #D5D5D5;
+  outline: none; 
 }
 .form {
-    flex-direction: column;
-    display: flex;
+  flex-direction: column;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
-.checking,.button-login,.button-google{
-    background-color: #D5D5D5;
-    margin: 10px;
-    border-radius: 20px;
-    padding: 7px;
-
+.checking,
+.button-login,
+.button-google {
+  background-color: #d5d5d5;
+  margin: 10px;
+  border-radius: 20px;
+  padding: 7px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
 }
