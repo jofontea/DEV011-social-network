@@ -7,7 +7,7 @@
 }
 .img-logo {
   border-radius: 20px;
-  width: 176px;
+  width: 170px;
   height: 170px;
   flex-shrink: 0;
   display: flex;
@@ -36,25 +36,33 @@
   box-shadow: 0px 1px 2px 0px #7cb8f2;
   text-align: center;
   margin: 10px;
+  padding: 0px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   border: none;
-  border-bottom: 1px solid #D5D5D5;
-  outline: none; 
+  border-bottom: 1px solid #d5d5d5;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
 }
 .form {
   flex-direction: column;
   display: flex;
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  
 }
 .checking,
 .button-login,
 .button-google {
   background-color: #d5d5d5;
-  margin: 10px;
+  margin: 7px;
   border-radius: 20px;
-  padding: 7px;
+  padding: 0px;
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
 }
