@@ -4,7 +4,7 @@ botón que por el momento solo se visualiza el cual más adelante nos permitirá
  navegar a la ruta login.
 */
 //file home.js
-export function home (navigateTo) {
+/*export function home (navigateTo) {
   const section = document.createElement("section");
   const nameapp = document.createElement("h1");
   const title = document.createElement("h2");
@@ -20,4 +20,4 @@ export function home (navigateTo) {
   return section;
 }
 
-export default home;
+export default home;*/
