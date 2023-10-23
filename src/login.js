@@ -18,9 +18,7 @@ export function login() {
   checking.setAttribute('class', 'checking');
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('class', 'img-logo');
-  imgLogo.setAttribute('src', 'logo app Fit Sync.png');
-
-
+  imgLogo.setAttribute('src','IMAGENES/logo app Fit Sync.png');
 
 
   title.textContent = 'Fit Sync';
@@ -32,7 +30,6 @@ export function login() {
 
   form.append( imgLogo, inputEmail, inputPass, buttonLogin);
   section.append(title, form, buttonGoogle, checking,);
-  console.log(login);
   return section;
 }
 
