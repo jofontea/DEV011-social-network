@@ -1,4 +1,7 @@
 // file login.js
+import { loginGoogle } from './lib/index.js'
+
+
 export function login() {
   const section = document.createElement('section');
   section.setAttribute('class', 'container');
@@ -18,7 +21,7 @@ export function login() {
   checking.setAttribute('class', 'checking');
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('class', 'img-logo');
-  imgLogo.setAttribute('src','IMAGENES/logo app Fit Sync.png');
+  imgLogo.setAttribute('src', 'IMAGENES/logo app Fit Sync.png');
 
 
   title.textContent = 'Fit Sync';
@@ -27,10 +30,16 @@ export function login() {
   buttonLogin.textContent = 'Ingresar';
   checking.textContent = 'Regístrate';
   buttonGoogle.textContent = 'Ingresar con Google';
+  buttonGoogle.addEventListener('click', loginGoogle);
 
-  form.append( imgLogo, inputEmail, inputPass, buttonLogin);
-  section.append(title, form, buttonGoogle, checking,);
-  return section;
+  // buttonGoogle.querySelector('.button-google').addEventListener('click', () => {
+  //   loginGoogle();
+  // });
+
+
+form.append(imgLogo, inputEmail, inputPass, buttonLogin);
+section.append(title, form, buttonGoogle, checking,);
+return section;
 }
 
 export default login;
