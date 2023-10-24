@@ -4,7 +4,7 @@ botón que por el momento solo se visualiza el cual más adelante nos permitirá
  navegar a la ruta login.
 */
 //file home.js
-/*export function home (navigateTo) {
+export function home (navigateTo) {
   const section = document.createElement("section");
   const nameapp = document.createElement("h1");
   const title = document.createElement("h2");
@@ -14,10 +14,11 @@ botón que por el momento solo se visualiza el cual más adelante nos permitirá
   button.setAttribute ('id','buttonlogin');
   nameapp.textContent = "Fit Sync";
   title.textContent = "Bienvenido/a a nuestra aplicación";
+  button.addEventListener('click',() => {
+    navigateTo('/login');
+  });
 
   section.append(title, nameapp, button);
   console.log(section);
   return section;
 }
-
-export default home;*/

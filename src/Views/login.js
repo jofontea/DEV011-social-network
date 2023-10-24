@@ -1,5 +1,5 @@
 // file login.js
-import { loginGoogle } from './lib/index.js'
+import { loginGoogle } from '../lib/index.js'
 
 
 export function login() {
@@ -32,6 +32,7 @@ export function login() {
   buttonGoogle.textContent = 'Ingresar con Google';
   buttonGoogle.addEventListener('click', loginGoogle);
 
+  
   // buttonGoogle.querySelector('.button-google').addEventListener('click', () => {
   //   loginGoogle();
   // });
