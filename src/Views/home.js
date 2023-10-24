@@ -4,21 +4,26 @@ botón que por el momento solo se visualiza el cual más adelante nos permitirá
  navegar a la ruta login.
 */
 //file home.js
-export function home (navigateTo) {
+export function home(navigateTo) {
   const section = document.createElement("section");
-  const nameapp = document.createElement("h1");
   const title = document.createElement("h2");
   const button = document.createElement("button");
+  const imgLogo = document.createElement("img");
+  const body =  document.createElement('body')
 
-  button.textContent = "Regístrate";
-  button.setAttribute ('id','buttonlogin');
-  nameapp.textContent = "Fit Sync";
-  title.textContent = "Bienvenido/a a nuestra aplicación";
-  button.addEventListener('click',() => {
-    navigateTo('/login');
+  imgLogo.setAttribute("class", "img-logo");
+  imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
+  body.setAttribute("class","body");
+  body.setAttribute("src", "IMAGENES/background.png");
+
+  button.textContent = "Comienza aquí";
+  button.setAttribute("id", "buttonlogin");
+  title.textContent = "Bienvenid@ a Fit Sync";
+  button.addEventListener("click", () => {
+    navigateTo("/login");
   });
 
-  section.append(title, nameapp, button);
+  section.append(body, title, imgLogo, button);
   console.log(section);
   return section;
 }

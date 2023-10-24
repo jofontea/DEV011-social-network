@@ -21,7 +21,7 @@ export function login() {
   checking.setAttribute('class', 'checking');
   const imgLogo = document.createElement('img');
   imgLogo.setAttribute('class', 'img-logo');
-  imgLogo.setAttribute('src', 'IMAGENES/logo app Fit Sync.png');
+  imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
 
 
   title.textContent = 'Fit Sync';

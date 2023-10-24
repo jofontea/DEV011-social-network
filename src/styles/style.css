@@ -5,6 +5,13 @@
   align-items: center;
   justify-content: center;
 }
+.body {
+  background-image: url('IMAGENES/background.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .img-logo {
   border-radius: 20px;
   width: 170px;
@@ -51,7 +58,6 @@
   display: flex;
   font-family: "Inter", sans-serif;
   font-size: 14px;
-  
 }
 .checking,
 .button-login,
