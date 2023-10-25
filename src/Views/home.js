@@ -5,25 +5,25 @@ botón que por el momento solo se visualiza el cual más adelante nos permitirá
 */
 //file home.js
 export function home(navigateTo) {
+  const form = document.createElement("form");
   const section = document.createElement("section");
   const title = document.createElement("h2");
   const button = document.createElement("button");
   const imgLogo = document.createElement("img");
-  const body =  document.createElement('body')
-
+  form.setAttribute("class", "form-h");
+  title.setAttribute("class", "title-h");
   imgLogo.setAttribute("class", "img-logo");
   imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
-  body.setAttribute("class","body");
-  body.setAttribute("src", "IMAGENES/background.png");
-
+  section.setAttribute("class", "body-home");
+  button.setAttribute("class", "button-h");
   button.textContent = "Comienza aquí";
   button.setAttribute("id", "buttonlogin");
   title.textContent = "Bienvenid@ a Fit Sync";
   button.addEventListener("click", () => {
     navigateTo("/login");
   });
-
-  section.append(body, title, imgLogo, button);
+  form.append(title, imgLogo, button);
+  section.append(form);
   console.log(section);
   return section;
 }
