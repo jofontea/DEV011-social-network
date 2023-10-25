@@ -1,7 +1,7 @@
 // file main.js finished
 import { home } from "./Views/home.js";
-import login from "./Views/login.js";
-import error from "./Views/error.js";
+import {login} from "./Views/login.js";
+import {error} from "./Views/error.js";
 import { register } from "./Views/register.js";
 
 const routes = [

@@ -2,14 +2,13 @@
 import { loginGoogle } from "../lib/index.js";
 
 export function login(navigateTo) {
-  const section = document.createElement("section");
-  section.setAttribute("class", "container");
+  const section = document.createElement("section"); section.setAttribute("class", "container");
   const title = document.createElement("h1");
   title.setAttribute("class", "title");
   const buttonGoogle = document.createElement("button");
   buttonGoogle.setAttribute("class", "button-google");
-  const form = document.createElement("form");
-  form.setAttribute("class", "form");
+  const divLogin = document.createElement("div");
+  divLogin.setAttribute("class", "divLogin");
   const inputEmail = document.createElement("input");
   inputEmail.setAttribute("class", "email");
   const inputPass = document.createElement("input");
@@ -28,7 +27,9 @@ export function login(navigateTo) {
   buttonLogin.textContent = "Ingresar";
   checking.textContent = "Regístrate";
   buttonGoogle.textContent = "Ingresar con Google";
-  buttonGoogle.addEventListener("click", loginGoogle);
+  buttonGoogle.addEventListener("click", () => {
+    loginGoogle().then(res => console.log(res));
+  });
 
   checking.addEventListener("click", () => {
     navigateTo("/register");
@@ -38,7 +39,7 @@ export function login(navigateTo) {
   //   loginGoogle();
   // });
 
-  form.append(
+  divLogin.append(
     imgLogo,
     inputEmail,
     inputPass,
@@ -46,8 +47,6 @@ export function login(navigateTo) {
     buttonGoogle,
     checking
   );
-  section.append(title, form);
+  section.append(title, divLogin);
   return section;
 }
-
-export default login;

@@ -10,10 +10,13 @@ export const loginGoogle = () => {
     // The signed-in user info.
     const user = result.user;
     console.log(user);
+    return user
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-   // console.error(errorCode)
+    console.error(errorCode);
+    console.log(error);
+    return error
   });
 };
 

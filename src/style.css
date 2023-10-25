@@ -59,7 +59,7 @@ body {
   height: 40px;
   flex-shrink: 0;
 }
-.form,
+.divLogin,
 .form-r,
 .form-h {
   flex-direction: column;
