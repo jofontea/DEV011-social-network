@@ -1,5 +1,5 @@
 
-import {signInWithPopup} from "firebase/auth"
+import {createUserWithEmailAndPassword, signInWithPopup} from "firebase/auth"
 import { auth, provider } from "../config-firebase";
 
 
@@ -20,16 +20,15 @@ export const loginGoogle = () => {
   });
 };
 
-// export const loginFirebase = (email,password) => {
-
-//   firebase.auth().createUserWithEmailAndPassword(email, password)
-//     .then((userCredential) => {
-//       const user = userCredential.user;
-//       console.log('Usuario registrado:', user);
-//     })
-//     .catch((error) => {
-//       console.error('Error al registrar usuario:', error);
-//     });
-// };
+export const loginFirebase = (email, password) => {
+  createUserWithEmailAndPassword(auth, email, password) // Utiliza el objeto auth
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log("Usuario registrado:", user);
+    })
+    .catch((error) => {
+      console.error("Error de Autenticación de Firebase:", error);
+    });
+};
 
 
