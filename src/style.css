@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
 body {
   /* background-image: url("IMAGENES/background.png");*/
   background-color: #050834;
@@ -59,15 +60,17 @@ body {
   height: 40px;
   flex-shrink: 0;
 }
-.divLogin,
-.form-r,
-.form-h {
+
+.div-l,
+.div-r,
+.div-h {
   flex-direction: column;
   display: flex;
   font-family: "Inter", sans-serif;
   font-size: 14px;
   align-items: center;
 }
+
 .checking,
 .button-login,
 .button-google,
@@ -84,6 +87,7 @@ body {
   flex-shrink: 0;
   justify-content: center;
 }
+
 .text-r {
   background-color: #7cb8f2;
 
@@ -100,24 +104,20 @@ body {
   padding: 0px;
 }
 
-.email-r,
-.name-r,
-.last-name-r,
-.password-r,
-.again-password-r,
-.date-r {
-  background-color: #050834;
-  color: white;
-  box-shadow: 0px 1px 2px 0px #7cb8f2;
-  text-align: center;
-  margin: 10px;
-  padding: 0px;
-  font-family: "Inter", sans-serif;
-  font-size: 14px;
-  border: none;
-  border-bottom: 1px solid #d5d5d5;
-  outline: none;
-  width: 150px;
-  height: 40px;
-  flex-shrink: 0;
+#email-r,
+#password-r{
+background-color: #050834;
+color: white;
+box-shadow: 0px 1px 2px 0px #7cb8f2;
+text-align: center;
+margin: 10px;
+padding: 0px;
+font-family: "Inter", sans-serif;
+font-size: 14px;
+border: none;
+border-bottom: 1px solid #d5d5d5;
+outline: none;
+width: 150px;
+height: 40px;
+flex-shrink: 0;
 }

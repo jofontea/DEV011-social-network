@@ -1,57 +1,54 @@
+import { loginFirebase } from "../lib";
+
 export function register(navigateTo) {
   const section = document.createElement("section");
-  const title = document.createElement("h2");
-  const button = document.createElement("button");
-  const imgLogo = document.createElement("img");
+  const title = document.createElement("h2"); title.setAttribute("class", "title-r");
+  const button = document.createElement("button"); button.setAttribute("class", "button-send");
+  const imgLogo = document.createElement("img"); imgLogo.setAttribute("class", "img-logo");
+  const text = document.createElement("h2"); text.setAttribute("class", "text-r");
+  const email = document.createElement("input"); email.setAttribute("id", "email-r");
+  const password = document.createElement("input"); password.setAttribute("id", "password-r");
+  const divRg = document.createElement("div"); divRg.setAttribute("class", "div-r");
+  // const name = document.createElement("input"); name.setAttribute("class", "name-r");
+  // const lastName = document.createElement("input"); lastName.setAttribute("class", "last-name-r");
+  // const againPassword = document.createElement("input"); againPassword.setAttribute("class", "again-password-r");
+  // const date = document.createElement("input"); date.setAttribute("class", "date-r");
 
-  const text = document.createElement("h2");
-  const email = document.createElement("input");
-  const name = document.createElement("input");
-  const lastName = document.createElement("input");
-  const password = document.createElement("input");
-  const againPassword = document.createElement("input");
-  const date = document.createElement("input");
-  const form = document.createElement("form");
-
-  title.setAttribute("class", "title-r");
-  form.setAttribute("class", "form-r");
-  text.setAttribute("class", "text-r");
   text.textContent = "Inserta tus datos aquí";
-  email.setAttribute("class", "email-r");
   email.placeholder = "Correo electrónico";
-  name.setAttribute("class", "name-r");
-  name.placeholder = "Nombre";
-  lastName.setAttribute("class", "last-name-r");
-  lastName.placeholder = "Apellido";
-  password.setAttribute("class", "password-r");
   password.placeholder = "Contraseña";
-  againPassword.setAttribute("class", "again-password-r");
-  againPassword.placeholder = "Repetir contraseña";
-  date.setAttribute("class", "date-r");
-  date.placeholder = "Fecha de nacimiento";
-
-  imgLogo.setAttribute("class", "img-logo");
-  imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
-  button.setAttribute("class", "button-send");
   button.textContent = "Enviar datos";
-  button.setAttribute("id", "buttonlogin");
   title.textContent = "Fit Sync";
-  button.addEventListener("click", () => {
-    navigateTo("/login");
+  //name.placeholder = "Nombre";
+  //lastName.placeholder = "Apellido";
+  //againPassword.placeholder = "Repetir contraseña";
+  //date.placeholder = "Fecha de nacimiento";
+  
+  imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
+  button.setAttribute("id", "buttonlogin");
+  password.setAttribute("type", "password");
+  button.addEventListener("click", (event) => {
+  event.preventDefault(); // Evitar que el formulario se envíe
+  const emailValue = email.value;
+  const passwordValue = password.value;
+  loginFirebase(emailValue, passwordValue);
+
   });
-  form.append(
+
+  // button.addEventListener("click", () => {
+  //   navigateTo("/login");
+  // });
+
+  divRg.append(
     title,
     imgLogo,
     text,
     email,
-    name,
-    lastName,
     password,
-    againPassword,
-    date,
     button
   );
-  section.append(form);
+
+  section.append(divRg);
   console.log(section);
   return section;
 }
