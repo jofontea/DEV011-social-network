@@ -20,16 +20,12 @@ export function login(navigateTo) {
   buttonLogin.textContent = "Ingresar";
   checking.textContent = "Regístrate";
   buttonGoogle.textContent = "Ingresar con Google";
-  
-
 
   buttonLogin.addEventListener("click", (event) => {
-      event.preventDefault(); // Evitar que el formulario se envíe
-      const emailValue = inputEmail.value;
-      const passwordValue = inputPass.value;
-      loginUser(emailValue, passwordValue);
-      const fin = loginUser(emailValue, passwordValue);
-      console.log (fin);
+    event.preventDefault(); // Evitar que el formulario se envíe
+    const emailValue = inputEmail.value;
+    const passwordValue = inputPass.value;
+    loginUser(emailValue, passwordValue);
   });
 
   buttonGoogle.addEventListener("click", () => {

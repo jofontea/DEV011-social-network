@@ -1,4 +1,4 @@
-import { RegisterFirebase} from "../lib";
+import { RegisterFirebase } from "../lib";
 
 export function register(navigateTo) {
   const section = document.createElement("section");
@@ -23,17 +23,15 @@ export function register(navigateTo) {
   //lastName.placeholder = "Apellido";
   //againPassword.placeholder = "Repetir contraseña";
   //date.placeholder = "Fecha de nacimiento";
-  
+
   imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
   button.setAttribute("id", "buttonlogin");
   password.setAttribute("type", "password");
   button.addEventListener("click", (event) => {
-  event.preventDefault(); // Evitar que el formulario se envíe
-  const emailValue = email.value;
-  const passwordValue = password.value;
-  RegisterFirebase(emailValue, passwordValue);
-  
-
+    event.preventDefault(); // Evitar que el formulario se envíe
+    const emailValue = email.value;
+    const passwordValue = password.value;
+    RegisterFirebase(emailValue, passwordValue);
   });
 
   // button.addEventListener("click", () => {
