@@ -1,4 +1,4 @@
-import { loginFirebase } from "../lib";
+import { RegisterFirebase} from "../lib";
 
 export function register(navigateTo) {
   const section = document.createElement("section");
@@ -31,7 +31,8 @@ export function register(navigateTo) {
   event.preventDefault(); // Evitar que el formulario se envíe
   const emailValue = email.value;
   const passwordValue = password.value;
-  loginFirebase(emailValue, passwordValue);
+  RegisterFirebase(emailValue, passwordValue);
+  
 
   });
 
