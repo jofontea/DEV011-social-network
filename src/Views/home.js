@@ -18,7 +18,6 @@ export function home(navigateTo) {
   button.addEventListener("click", () => {
     navigateTo("/login");
   });
-  //button.setAttribute("id", "buttonlogin");
 
   divHome.append(title, imgLogo, button);
   section.append(divHome);

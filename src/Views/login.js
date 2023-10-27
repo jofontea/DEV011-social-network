@@ -1,5 +1,5 @@
 // file login.js
-import { loginGoogle } from "../lib/index.js";
+import { loginGoogle, loginUser } from "../lib/index.js";
 
 export function login(navigateTo) {
   const section = document.createElement("section"); section.setAttribute("class", "container");
@@ -13,12 +13,20 @@ export function login(navigateTo) {
   const imgLogo = document.createElement("img"); imgLogo.setAttribute("class", "img-logo");
 
   imgLogo.setAttribute("src", "IMAGENES/logo-fit.png");
+  inputPass.setAttribute("type", "password");
   title.textContent = "Fit Sync";
   inputEmail.placeholder = "Correo electrónico";
   inputPass.placeholder = "Contraseña";
   buttonLogin.textContent = "Ingresar";
   checking.textContent = "Regístrate";
   buttonGoogle.textContent = "Ingresar con Google";
+
+  buttonLogin.addEventListener("click", (event) => {
+    event.preventDefault(); // Evitar que el formulario se envíe
+    const emailValue = inputEmail.value;
+    const passwordValue = inputPass.value;
+    loginUser(emailValue, passwordValue);
+  });
 
   buttonGoogle.addEventListener("click", () => {
     loginGoogle().then(res => console.log(res));
