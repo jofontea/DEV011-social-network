@@ -1,5 +1,11 @@
-
-import { createUserWithEmailAndPassword, fetchSignInMethodsForEmail, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth"
+import {
+  createUserWithEmailAndPassword,
+  fetchSignInMethodsForEmail,
+  onAuthStateChanged,
+  sendEmailVerification,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { auth, provider } from "../config-firebase";
 import { navigateTo } from "../main";
 
@@ -10,7 +16,7 @@ export const loginUser = (email, password) => {
       const user = userCredential.user;
       console.log("usuario registrado", user);
       navigateTo("/wall");
-      return
+      return;
     })
     .catch((error) => {
       const errorMessage = error.message;
@@ -18,7 +24,7 @@ export const loginUser = (email, password) => {
       if (error.code === "auth/invalid-login-credentials") {
         alert("Datos incorrectos, verifica nuevamente");
       }
-      return
+      return;
     });
 };
 
@@ -30,19 +36,21 @@ export const loginGoogle = () => {
       const user = result.user;
       //console.log(user);
       navigateTo("/wall");
-      return
-    }).catch((error) => {
+      return;
+    })
+    .catch((error) => {
       console.log(error);
       alert("Datos incorrectos, verifica nuevamente.");
-      return
+      return;
     });
 };
-// REGISTRO
+
 export const registerFirebase = (email, password) => {
   if (password.length < 6) {
     alert("La contraseña debe tener al menos 6 caracteres.");
     return;
   }
+
   // Verificar si el correo ya está registrado
   fetchSignInMethodsForEmail(auth, email)
     .then((signInMethods) => {
@@ -50,21 +58,53 @@ export const registerFirebase = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             const user = userCredential.user;
+
+            // Enviar correo de confirmación
+            sendEmailVerification(user)
+              .then(() => {
+                console.log("Correo de confirmación enviado.");
+              })
+              .catch((error) => {
+                console.error(
+                  "Error al enviar el correo de confirmación:",
+                  error
+                );
+              });
+
             console.log("Usuario registrado:", user);
             navigateTo("/login");
-            return user
           })
           .catch((error) => {
             console.error("Error de Autenticación de Firebase:", error);
-            if (error.code === "auth/email-already-in-use" || error.code === "auth/invalid-email") {
-              alert("El correo electrónico ya está en uso o es inválido. Intenta con otro correo.");
+            if (
+              error.code === "auth/email-already-in-use" ||
+              error.code === "auth/invalid-email"
+            ) {
+              alert(
+                "El correo electrónico ya está en uso o es inválido. Intenta con otro correo."
+              );
             }
           });
       } else {
-        alert("El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar.");
-      } 
+        alert(
+          "El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar."
+        );
+      }
     })
     .catch((error) => {
       console.error("Error al verificar el correo electrónico:", error);
     });
 };
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    if (user.emailVerified) {
+      // Usuario autenticado y correo electrónico verificado
+      navigateTo("/wall"); // Redirigir al muro de la app
+    } else {
+      // Usuario autenticado, pero correo no verificado
+      navigateTo("/login"); // Redirigir de nuevo a la página de inicio de sesión
+    }
+  }
+});
+
+
