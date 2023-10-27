@@ -7,20 +7,18 @@ import { navigateTo } from "../main";
 export const loginUser = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in 
       const user = userCredential.user;
       console.log("usuario registrado", user);
-      navigateTo("/");
-      return (user)
+      navigateTo("/wall");
+      return
     })
     .catch((error) => {
-      const errorCode = error.code;
       const errorMessage = error.message;
-      console.log(errorCode);
       console.log(errorMessage);
       if (error.code === "auth/invalid-login-credentials") {
         alert("Datos incorrectos, verifica nuevamente");
       }
+      return
     });
 };
 
@@ -30,19 +28,17 @@ export const loginGoogle = () => {
     .then((result) => {
       // The signed-in user info.
       const user = result.user;
-      console.log(user);
-      navigateTo("/");
-      return user
+      //console.log(user);
+      navigateTo("/wall");
+      return
     }).catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.error(errorCode);
       console.log(error);
-      return error
+      alert("Datos incorrectos, verifica nuevamente.");
+      return
     });
 };
 // REGISTRO
-export const RegisterFirebase = (email, password) => {
+export const registerFirebase = (email, password) => {
   if (password.length < 6) {
     alert("La contraseña debe tener al menos 6 caracteres.");
     return;
@@ -55,19 +51,18 @@ export const RegisterFirebase = (email, password) => {
           .then((userCredential) => {
             const user = userCredential.user;
             console.log("Usuario registrado:", user);
+            navigateTo("/login");
+            return user
           })
           .catch((error) => {
             console.error("Error de Autenticación de Firebase:", error);
-            if (error.code === "auth/email-already-in-use") {
-              alert("El correo electrónico ya está en uso. Intenta con otro correo o inicia sesión.");
-            }
-            else if (error.code === "auth/invalid-email") {
-              alert("El correo electrónico es invalido. Intenta nuevamente con otro correo.");
+            if (error.code === "auth/email-already-in-use" || error.code === "auth/invalid-email") {
+              alert("El correo electrónico ya está en uso o es inválido. Intenta con otro correo.");
             }
           });
       } else {
         alert("El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar.");
-      }
+      } 
     })
     .catch((error) => {
       console.error("Error al verificar el correo electrónico:", error);
