@@ -32,17 +32,18 @@ body {
 .title-r,
 .title-h {
   /*background-color: #7cb8f2;*/
-  width: 194px;
-  height: 62px;
+  /*width: 194px;*/
+  width: fit-content;
+  /*height: 62px;*/
   flex-shrink: 0;
   border-radius: 20px;
   justify-content: center;
   display: flex;
   align-items: center;
   font-family: "Inter", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   margin: 10px;
-  padding: 0px;
+  padding: 20px 20px;
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px  #050834;
   font-weight: 700;
