@@ -5,24 +5,25 @@ import {
   sendEmailVerification,
   signInWithEmailAndPassword,
   signInWithPopup,
-} from 'firebase/auth';
-import { auth, provider } from '../config-firebase';
-import { navigateTo } from '../main';
+} from "firebase/auth";
+import { db, collection, addDoc, getDocs } from "../firestore";
+import { auth, provider } from "../config-firebase";
+import { navigateTo } from "../main";
 
 //LOGIN USUARIOS YA REGISTRADOS
 export const loginUser = (email, password) => {
   signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log('usuario registrado', user);
-      navigateTo('/wall');
+      console.log("usuario registrado", user);
+      navigateTo("/wall");
       return;
     })
     .catch((error) => {
       const errorMessage = error.message;
       console.log(errorMessage);
-      if (error.code === 'auth/invalid-login-credentials') {
-        alert('Datos incorrectos, verifica nuevamente');
+      if (error.code === "auth/invalid-login-credentials") {
+        alert("Datos incorrectos, verifica nuevamente");
       }
       return;
     });
@@ -35,19 +36,19 @@ export const loginGoogle = () => {
       // The signed-in user info.
       const user = result.user;
       //console.log(user);
-      navigateTo('/wall');
+      navigateTo("/wall");
       return;
     })
     .catch((error) => {
       console.log(error);
-      alert('Datos incorrectos, verifica nuevamente.');
+      alert("Datos incorrectos, verifica nuevamente.");
       return;
     });
 };
 
 export const registerFirebase = (email, password) => {
   if (password.length < 6) {
-    alert('La contraseña debe tener al menos 6 caracteres.');
+    alert("La contraseña debe tener al menos 6 caracteres.");
     return;
   }
   // Verificar si el correo ya está registrado
@@ -60,50 +61,58 @@ export const registerFirebase = (email, password) => {
             // Enviar correo de confirmación
             sendEmailVerification(user)
               .then(() => {
-                console.log('Correo de confirmación enviado.');
+                console.log("Correo de confirmación enviado.");
               })
               .catch((error) => {
                 console.error(
-                  'Error al enviar el correo de confirmación:',
+                  "Error al enviar el correo de confirmación:",
                   error
                 );
               });
 
-            console.log('Usuario registrado:', user);
-            navigateTo('/login');
+            console.log("Usuario registrado:", user);
+            navigateTo("/login");
           })
           .catch((error) => {
-            console.error('Error de Autenticación de Firebase:', error);
+            console.error("Error de Autenticación de Firebase:", error);
             if (
-              error.code === 'auth/email-already-in-use' ||
-              error.code === 'auth/invalid-email'
+              error.code === "auth/email-already-in-use" ||
+              error.code === "auth/invalid-email"
             ) {
               alert(
-                'El correo electrónico ya está en uso o es inválido. Intenta con otro correo.'
+                "El correo electrónico ya está en uso o es inválido. Intenta con otro correo."
               );
             }
           });
       } else {
         alert(
-          'El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar.'
+          "El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar."
         );
       }
     })
     .catch((error) => {
-      console.error('Error al verificar el correo electrónico:', error);
+      console.error("Error al verificar el correo electrónico:", error);
     });
   onAuthStateChanged(auth, (user) => {
     if (user) {
       if (user.emailVerified) {
         // Usuario autenticado y correo electrónico verificado
-         navigateTo("/wall"); // Redirigir al muro de la app
+        navigateTo("/wall"); // Redirigir al muro de la app
       } else {
         // Usuario autenticado, pero correo no verificado
         navigateTo("/login"); // Redirigir de nuevo a la página de inicio de sesión
       }
     }
   });
-
+};
+export const createPost = (comment) => {
+  addDoc(collection(db, "posts"), {
+    comment,
+  });
 };
 
-
+/*export const querySnapshot = getDocs(collection(db, "posts"));
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data()}`);
+});
+*/
