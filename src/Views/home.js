@@ -10,7 +10,7 @@ export function home(navigateTo) {
   title.textContent = 'Bienvenid@ a Fit Sync';
 
   button.addEventListener('click', () => {
-    navigateTo('/login');
+    navigateTo("/login");
   });
 
   divHome.append(title, imgLogo, button);

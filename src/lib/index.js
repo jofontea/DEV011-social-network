@@ -50,7 +50,6 @@ export const registerFirebase = (email, password) => {
     alert('La contraseña debe tener al menos 6 caracteres.');
     return;
   }
-
   // Verificar si el correo ya está registrado
   fetchSignInMethodsForEmail(auth, email)
     .then((signInMethods) => {
@@ -58,7 +57,6 @@ export const registerFirebase = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
             const user = userCredential.user;
-
             // Enviar correo de confirmación
             sendEmailVerification(user)
               .then(() => {
@@ -94,17 +92,18 @@ export const registerFirebase = (email, password) => {
     .catch((error) => {
       console.error('Error al verificar el correo electrónico:', error);
     });
-};
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    if (user.emailVerified) {
-      // Usuario autenticado y correo electrónico verificado
-      navigateTo('/wall'); // Redirigir al muro de la app
-    } else {
-      // Usuario autenticado, pero correo no verificado
-      navigateTo('/login'); // Redirigir de nuevo a la página de inicio de sesión
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if (user.emailVerified) {
+        // Usuario autenticado y correo electrónico verificado
+         navigateTo("/wall"); // Redirigir al muro de la app
+      } else {
+        // Usuario autenticado, pero correo no verificado
+        navigateTo("/login"); // Redirigir de nuevo a la página de inicio de sesión
+      }
     }
-  }
-});
+  });
+
+};
 
 

@@ -6,11 +6,11 @@ import { register } from './Views/register.js';
 import { wall } from './Views/wall.js';
 
 const routes = [
-  { path: '/', component: home },
-  { path: '/login', component: login },
-  { path: '/register', component: register },
-  { path: '/wall', component: wall },
-  { path: '/error', component: error },
+  { path: "/", component: home },
+  { path: "/login", component: login },
+  { path: "/register", component: register },
+  { path: "/wall", component: wall },
+  { path: "/error", component: error },
 ];
 
 const defaultRoute = '/';
@@ -31,7 +31,7 @@ export function navigateTo(hash) {
     }
     root.appendChild(route.component(navigateTo));
   } else {
-    navigateTo('/error');
+    navigateTo("/error");
   }
 }
 
