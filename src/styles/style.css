@@ -154,7 +154,7 @@ border-radius: 20px;
 }
 .title-w {
   margin: 20px;
-  font-family: 'vamos';
+  font-family: "Inter", sans-serif;
   font-size: 35px; /* Tamaño de fuente */
   color: #7cb8f2; /* Color del texto */
 }
