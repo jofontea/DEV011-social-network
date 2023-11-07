@@ -9,20 +9,12 @@ export function register(navigateTo) {
   const email = document.createElement('input'); email.setAttribute('id', 'email-r');
   const password = document.createElement('input'); password.setAttribute('id', 'password-r');
   const divRg = document.createElement('div'); divRg.setAttribute('class', 'div-r');
-  // const name = document.createElement('input'); name.setAttribute('class', 'name-r');
-  // const lastName = document.createElement('input'); lastName.setAttribute('class', 'last-name-r');
-  // const againPassword = document.createElement('input'); againPassword.setAttribute('class', 'again-password-r');
-  // const date = document.createElement('input'); date.setAttribute('class', 'date-r');
 
   text.textContent = 'Inserta tus datos aquí';
   email.placeholder = 'Correo electrónico';
   password.placeholder = 'Contraseña';
   button.textContent = 'Enviar datos';
   title.textContent = 'Fit Sync';
-  //name.placeholder = 'Nombre';
-  //lastName.placeholder = 'Apellido';
-  //againPassword.placeholder = 'Repetir contraseña';
-  //date.placeholder = 'Fecha de nacimiento';
 
   imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
   button.setAttribute('id', 'buttonlogin');
@@ -44,7 +36,7 @@ export function register(navigateTo) {
     text,
     email,
     password,
-    button
+    button,
   );
 
   section.append(divRg);

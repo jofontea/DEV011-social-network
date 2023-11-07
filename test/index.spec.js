@@ -1,8 +1,10 @@
-// importamos la funcion que vamos a testear
-import { myFunction } from '../src/lib/index';
+/**
+ * @jest-environment jsdom
+ */
+import { loginUser } from '../src/lib/index';
 
-describe('myFunction', () => {
-  it('debería ser una función', () => {
-    expect(typeof myFunction).toBe('function');
+describe('loginUser', () => {
+  test('debería ser una función', () => {
+    expect(typeof loginUser).toBe('function');
   });
 });
