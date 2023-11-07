@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+@font-face {
+  font-family: 'vamos'; /* Reemplaza con el nombre que desees */
+  src: url('../fonts/Vamos.ttf') format('truetype'); /* Ruta al archivo de la fuente */
+}
+
+.container {
+  /*background-color: #050834;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-image: url("../IMAGENES/background opacity.jpeg");
+  /*background-image: url("IMAGENES/background opacity.jpeg");*/
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  align-content: center;
+  background-attachment: fixed; /* Opcional: mantiene la imagen en su lugar mientras se desplaza la página */
+  
+}
+
+
+.img-logo {
+  border-radius: 20px;
+  width: 170px;
+  height: 170px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.title,
+.title-r,
+.title-h {
+  /*background-color: #7cb8f2;*/
+  /*width: 194px;*/
+  width: fit-content;
+  /*height: 62px;*/
+  flex-shrink: 0;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  margin: 10px;
+  padding: 20px 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 5px 5px  #050834;
+  font-weight: 700;
+}
+
+.email,
+.password {
+  background-color: #050834;
+  color: white;
+  box-shadow: 0px 1px 2px 0px #7cb8f2;
+  text-align: center;
+  margin: 10px;
+  padding: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  border: none;
+  border-bottom: 1px solid #d5d5d5;
+  outline: none;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  
+}
+
+.div-l,
+.div-r,
+.div-h {
+  flex-direction: column;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  align-items: center;
+}
+
+.checking,
+.button-login,
+.button-google,
+.button-send,
+.button-h {
+  background-color: #d5d5d5;
+  margin: 7px;
+  border-radius: 20px;
+  padding: 0px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  width: 150px;
+  height: 40px;
+  flex-shrink: 0;
+  justify-content: center;
+}
+.button-google img {
+  width: 20px; /* Ajusta el ancho del logotipo según tus preferencias */
+  margin-right: 5px; /* Espacio entre el logotipo y el texto */
+}
+
+.text-r {
+  background-color: #7cb8f2;
+
+  width: 180px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  margin: 10px;
+  padding: 0px;
+}
+
+#email-r,
+#password-r{
+background-color: #050834;
+color: white;
+box-shadow: 0px 1px 2px 0px #7cb8f2;
+text-align: center;
+margin: 10px;
+padding: 0px;
+font-family: "Inter", sans-serif;
+font-size: 14px;
+border: none;
+border-bottom: 1px solid #d5d5d5;
+outline: none;
+width: 150px;
+height: 40px;
+flex-shrink: 0;
+border-radius: 20px;
+}
+.header-w {
+  height: 100px; 
+  background-color: #050834; 
+  display: flex; 
+  justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
+  align-items: center; /* Centra verticalmente los elementos en el encabezado */
+}
+.logo-header-w {
+  max-width: 100%; /* Limita el ancho de la imagen al ancho del encabezado */
+  max-height: 70px; /* Limita la altura de la imagen a 100 píxeles */
+}
+.title-w {
+  margin: 20px;
+  font-family: 'vamos';
+  font-size: 35px; /* Tamaño de fuente */
+  color: #7cb8f2; /* Color del texto */
+}
+.logOut {
+  margin: 20px;
+  background-color: #FDC664; /* Color de fondo */
+  color: #050834; /* Color del texto */
+  padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Esquinas redondeadas */
+  cursor: pointer; /* Cambia el cursor al pasar el ratón */
+  font-family: 'Mochiy Pop One';
+}
+.logOut:hover {
+  background-color: #A6B357;
+  transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
+}
+
+.footer-w {
+  background-color: #050834;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0; /* Coloca el footer en la parte inferior de la ventana */
+  width: 100%; /* Ancho completo de la ventana */
+}
