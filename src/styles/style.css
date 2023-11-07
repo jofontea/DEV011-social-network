@@ -164,7 +164,7 @@ border-radius: 20px;
   color: #050834; /* Color del texto */
   padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
   border: none; /* Sin borde */
-  border-radius: 10px; /* Esquinas redondeadas */
+  border-radius: 9px; /* Esquinas redondeadas */
   cursor: pointer; /* Cambia el cursor al pasar el ratón */
   font-family: 'Mochiy Pop One';
 }
