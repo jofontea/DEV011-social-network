@@ -15,10 +15,7 @@ export function wall(navigateTo) {
   divWall.setAttribute('class', 'div-w');
   // const menu = document.createElement('select'); menu.setAttribute('id', 'menu-w');
   // const op1 = document.createElement('option'); op1.setAttribute('value', ' ');
-  const footerWall = document.createElement('footer');
-  footerWall.setAttribute('class', 'footer-w');
-  const copyrightText = document.createElement('p');
-  copyrightText.setAttribute('class', 'text_footer');
+ 
   const postInput = document.createElement('input');
   postInput.setAttribute('type', 'text');
   const publishButton = document.createElement('button');
@@ -28,7 +25,6 @@ export function wall(navigateTo) {
 
   titleWall.textContent = 'Fit Sync';
   logoHeader.setAttribute('src', 'IMAGENES/logo-fit.png');
-  copyrightText.textContent = '© 2023 Josefa, Jessica y Camila. Todos los derechos reservados.';
   publishButton.textContent = 'Publicar';
   postInput.setAttribute('placeholder', 'Escribe tu publicación');
 
@@ -44,9 +40,8 @@ export function wall(navigateTo) {
   });
 
   headerWall.append(titleWall, logoHeader, logOut);
-  footerWall.appendChild(copyrightText);
   postsContainer.append(postInput, publishButton);
-  divWall.append(headerWall, postsContainer, footerWall);
+  divWall.append(headerWall, postsContainer);
 
   // Agregar el contenedor principal al cuerpo del documento
   document.body.appendChild(divWall);

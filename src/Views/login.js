@@ -40,7 +40,7 @@ export function login(navigateTo) {
   });
 
   buttonGoogle.addEventListener("click", () => {
-    loginGoogle().then((res) => console.log(res));
+    loginGoogle()
   });
 
   checking.addEventListener("click", () => {

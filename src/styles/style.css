@@ -17,8 +17,8 @@
 }
 
 body {
-  background-image: url("../IMAGENES/background opacity.jpeg");
-  /*background-image: url("IMAGENES/background opacity.jpeg");*/
+  background-image: url("../IMAGENES/background.jpeg");
+  /*background-image: url("IMAGENES/background.jpeg");*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
