@@ -1,6 +1,6 @@
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../firestore';
-import { createPost } from '../lib/index';
+import { createPost } from '../lib/index.js';
 
 export function wall(navigateTo) {
   const headerWall = document.createElement('header');
@@ -15,7 +15,7 @@ export function wall(navigateTo) {
   divWall.setAttribute('class', 'div-w');
   // const menu = document.createElement('select'); menu.setAttribute('id', 'menu-w');
   // const op1 = document.createElement('option'); op1.setAttribute('value', ' ');
- 
+
   const postInput = document.createElement('input');
   postInput.setAttribute('type', 'text');
   const publishButton = document.createElement('button');
@@ -61,6 +61,7 @@ export function wall(navigateTo) {
       commentsContainer.appendChild(commentElement);
     });
   };
+
   loadComments();
   window.addEventListener('load', loadComments);
 

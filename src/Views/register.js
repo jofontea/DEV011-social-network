@@ -1,4 +1,4 @@
-import { registerFirebase } from '../lib';
+import { registerFirebase, validateUserExist } from '../lib/index.js';
 
 export function register(navigateTo) {
   const section = document.createElement('section');
@@ -23,7 +23,40 @@ export function register(navigateTo) {
     event.preventDefault(); // Evitar que el formulario se envíe
     const emailValue = email.value;
     const passwordValue = password.value;
-    registerFirebase(emailValue, passwordValue);
+    if (passwordValue.length < 6) {
+      alert('La contraseña debe tener al menos 6 caracteres.');
+      return;
+    }
+    validateUserExist(emailValue)
+      .then((signInMethods) => {
+        if (signInMethods.length === 0) {
+          registerFirebase(emailValue, passwordValue)
+            .then((userCredential) => {
+              const user = userCredential.user;
+              // Enviar correo de confirmación
+              console.log('Usuario registrado:', user);
+              navigateTo('/login');
+            })
+            .catch((error) => {
+              console.error('Error de Autenticación de Firebase:', error);
+              if (
+                error.code === 'auth/email-already-in-use'
+              || error.code === 'auth/invalid-email'
+              ) {
+                alert(
+                  'El correo electrónico ya está en uso o es inválido. Intenta con otro correo.',
+                );
+              }
+            });
+        } else {
+          alert(
+            'El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar.',
+          );
+        }
+      })
+      .catch((error) => {
+        console.error('Error al verificar el correo electrónico:', error);
+      });
   });
 
   // button.addEventListener('click', () => {
@@ -40,6 +73,6 @@ export function register(navigateTo) {
   );
 
   section.append(divRg);
-  console.log(section);
+  // console.log(section);
   return section;
 }
