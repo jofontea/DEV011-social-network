@@ -15,7 +15,12 @@ export function wall(navigateTo) {
   divWall.setAttribute('class', 'div-w');
   // const menu = document.createElement('select'); menu.setAttribute('id', 'menu-w');
   // const op1 = document.createElement('option'); op1.setAttribute('value', ' ');
-
+  const editButton = document.createElement('button');
+  editButton.setAttribute('class', 'edit-button');
+  editButton.innerHTML = '<i class="fas fa-edit"></i>';
+  const deleteButton = document.createElement('button');
+  deleteButton.setAttribute('class', 'delete');
+  deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
   const postInput = document.createElement('input');
   postInput.setAttribute('type', 'text');
   const publishButton = document.createElement('button');
@@ -40,7 +45,7 @@ export function wall(navigateTo) {
   });
 
   headerWall.append(titleWall, logoHeader, logOut);
-  postsContainer.append(postInput, publishButton);
+  postsContainer.append(postInput, publishButton, editButton, deleteButton);
   divWall.append(headerWall, postsContainer);
 
   // Agregar el contenedor principal al cuerpo del documento
@@ -55,10 +60,30 @@ export function wall(navigateTo) {
     querySnapshot.forEach((doc) => {
       const commentData = doc.data();
       const commentText = commentData.comment;
+      // Crear un contenedor para la publicación y sus botones
+      const postContainer = document.createElement('div');
+      postContainer.setAttribute('class', 'post-container');
       const commentElement = document.createElement('div');
       commentElement.textContent = commentText;
       commentElement.setAttribute('class', 'comments');
-      commentsContainer.appendChild(commentElement);
+      // Crear botones de "Editar" y "Eliminar" para esta publicación
+      const editButton = document.createElement('button');
+      editButton.setAttribute('class', 'edit-button');
+      editButton.innerHTML = '<i class="fas fa-edit"></i>';
+
+      const deleteButton = document.createElement('button');
+      deleteButton.setAttribute('class', 'delete');
+      deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+
+      const likeButton = document.createElement('button');
+      likeButton.setAttribute('class', 'like-button');
+      likeButton.innerHTML = '<i class="fa-solid fa-heart"></i>';
+
+      // Agregar los botones a la publicación
+      postContainer.append(commentElement, editButton, deleteButton, likeButton);
+      
+      // Agregar el contenedor de la publicación al contenedor principal
+      commentsContainer.appendChild(postContainer);
     });
   };
 

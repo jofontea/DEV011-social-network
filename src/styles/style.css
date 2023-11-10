@@ -201,3 +201,34 @@ body {
   background-color: #c9d1d9; /* Cambia el color de fondo al pasar el ratón por encima */
   transition: background-color 0.3s ease; /* Agrega una transición suave */
 }
+.post-container {
+  position: relative;
+}
+.like-button {
+  color: #f20707;
+  position: relative;
+  left: 12px; /* Ajusta según sea necesario para la posición horizontal */
+  margin: 10%;
+  border: 15px;
+  padding: 0px;
+  top: -40px;
+  font-size: 24px;
+}
+
+.edit-button {
+  position: absolute;
+  top: -22px; /* Ajusta según sea necesario para la posición vertical */
+  right: 10px; /* Ajusta según sea necesario para la posición horizontal */
+  z-index: 1; /* Asegura que los botones estén encima de la publicación */
+ 
+}
+.delete {
+  position: absolute;
+  top: -22px; /* Ajusta según sea necesario para la posición vertical */
+  right: 40px; /* Ajusta según sea necesario para la posición horizontal */
+  z-index: 1; /* Asegura que los botones estén encima de la publicación */
+
+}
+
+
+
