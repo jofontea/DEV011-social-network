@@ -32,6 +32,13 @@ export function login(navigateTo) {
   checking.textContent = 'Regístrate';
   buttonGoogle.textContent = 'Ingresar con Google';
 
+  const returnButton = document.createElement('button');
+  returnButton.setAttribute('class', 'return-button');
+  returnButton.innerHTML = '<i class="fi-rr-arrow-small-left"></i>';
+  returnButton.addEventListener('click', () => {
+    navigateTo('/');
+  });
+
   buttonLogin.addEventListener('click', (event) => {
     event.preventDefault(); // Evitar que el formulario se envíe
     const emailValue = inputEmail.value;
@@ -77,6 +84,7 @@ export function login(navigateTo) {
     buttonLogin,
     buttonGoogle,
     checking,
+    returnButton,
   );
   section.append(title, divLogin);
   return section;

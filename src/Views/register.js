@@ -59,9 +59,12 @@ export function register(navigateTo) {
       });
   });
 
-  // button.addEventListener('click', () => {
-  //   navigateTo('/login');
-  // });
+  const returnButton = document.createElement('button');
+  returnButton.setAttribute('class', 'return-button');
+  returnButton.innerHTML = '<i class="fi-rr-arrow-small-left"></i>';
+  returnButton.addEventListener('click', () => {
+    navigateTo('/');
+  });
 
   divRg.append(
     title,
@@ -70,6 +73,7 @@ export function register(navigateTo) {
     email,
     password,
     button,
+    returnButton,
   );
 
   section.append(divRg);
