@@ -1,4 +1,4 @@
-// file main.js finished
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { home } from './views/home.js';
 import { login } from './views/login.js';
 import { error } from './views/error.js';
@@ -16,22 +16,42 @@ const routes = [
 const defaultRoute = '/';
 const root = document.getElementById('root');
 
-export function navigateTo(hash) {
-  const route = routes.find((routeFound) => routeFound.path === hash);
+async function navigateTo(hash) {
+  try {
+    const route = routes.find((routeFound) => routeFound.path === hash);
 
-  if (route && route.component) {
-    window.history.pushState(
-      {},
-      route.path,
-      window.location.origin + route.path,
-    );
+    if (route && route.component) {
+      window.history.pushState({}, route.path, window.location.origin + route.path);
+      if (root.firstChild) {
+        root.removeChild(root.firstChild);
+      }
 
-    if (root.firstChild) {
-      root.removeChild(root.firstChild);
+      if (route.path === '/wall') {
+        // Obtener el estado de autenticación
+        const auth = getAuth();
+
+        // Manejar cambios en el estado de autenticación
+        onAuthStateChanged(auth, async (user) => {
+          if (user) {
+            // Llamar a la función wall para obtener el componente y agregarlo al DOM
+            try {
+              const divWall = await wall(navigateTo);
+              root.appendChild(divWall);
+            } catch (catchError) {
+              console.error('Error al cargar wall:', catchError);
+            }
+          } else {
+            navigateTo('/error');
+          }
+        });
+      } else {
+        root.appendChild(route.component(navigateTo));
+      }
+    } else {
+      navigateTo('/error');
     }
-    root.appendChild(route.component(navigateTo));
-  } else {
-    navigateTo('/error');
+  } catch (error) {
+    console.error('Error en navigateTo:', error);
   }
 }
 
@@ -39,4 +59,5 @@ window.onpopstate = () => {
   navigateTo(window.location.pathname);
 };
 
+// Para cargar la ruta inicial al cargar la página
 navigateTo(window.location.pathname || defaultRoute);
