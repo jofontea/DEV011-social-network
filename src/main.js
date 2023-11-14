@@ -33,7 +33,7 @@ async function navigateTo(hash) {
         // Manejar cambios en el estado de autenticación
         onAuthStateChanged(auth, async (user) => {
           if (user) {
-            // Llamar a la función wall para obtener el componente y agregarlo al DOM
+            // Llamar a la función wall para obtener el componente
             try {
               const divWall = await wall(navigateTo);
               root.appendChild(divWall);
@@ -50,8 +50,8 @@ async function navigateTo(hash) {
     } else {
       navigateTo('/error');
     }
-  } catch (error) {
-    console.error('Error en navigateTo:', error);
+  } catch (catchError) {
+    console.error('Error en navigateTo:', catchError);
   }
 }
 
