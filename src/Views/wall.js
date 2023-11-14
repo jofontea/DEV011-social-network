@@ -37,12 +37,47 @@ async function loadComments(container, inputContainer) {
 
     container.innerHTML = '';
 
+
     comments.forEach(({ id, text }) => {
+      const postElement = document.createElement('div');
+      postElement.classList.add('post');
+
       const commentElement = document.createElement('div');
       commentElement.textContent = `ID: ${id}, Comentario: ${text}`;
       commentElement.classList.add('comments');
 
-      container.appendChild(commentElement);
+      const containerIcons = document.createElement('div');
+      containerIcons.setAttribute('class', 'container-icons');
+
+      const editButton = document.createElement('button');
+      editButton.setAttribute('class', 'edit-button');
+      editButton.innerHTML = '<i class="fas fa-edit"></i>';
+      editButton.addEventListener('click', () => {
+        // Lógica para editar el comentario
+        // Puedes abrir un cuadro de diálogo o cambiar el contenido del comentario directamente
+
+      });
+
+      const deleteButton = document.createElement('button');
+      deleteButton.setAttribute('class', 'delete');
+      deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+      deleteButton.addEventListener('click', async () => {
+
+      });
+
+      const likeButton = document.createElement('button');
+      likeButton.setAttribute('class', 'like-button');
+      likeButton.innerHTML = '<i class="fa-sharp fa-solid fa-heart-circle-check"></i>';
+      likeButton.addEventListener('click', () => {
+        // Lógica para dar "like" al comentario
+      });
+
+      containerIcons.append(editButton, deleteButton, likeButton);
+
+      postElement.appendChild(commentElement);
+      postElement.appendChild(containerIcons);
+
+      container.appendChild(postElement);
     });
 
     console.log('Comentarios cargados correctamente');
