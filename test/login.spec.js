@@ -43,6 +43,24 @@ describe('login', () => {
     });
   });
 
+  test('llama a showAlert con el mensaje correcto al error de credenciales incorrectas', () => {
+    const navigateTo = jest.fn();
+    const showAlert = jest.fn();
+    const DOM = document.createElement('div');
+    DOM.append(login(navigateTo, showAlert));
+
+    const emailInput = DOM.querySelector('.email');
+    const passwordInput = DOM.querySelector('.password');
+    emailInput.value = 'pepi@gmail.com';
+    passwordInput.value = 'invalid-password';
+
+    const loginButton = DOM.querySelector('.button-login');
+    loginButton.click();
+    setTimeout(() => {
+      expect(showAlert).toHaveBeenCalledWith('Datos incorrectos, verifica nuevamente');
+    });
+  });
+
   test('llama a loginGoogle al hacer clic en el botón de Google', () => {
     const navigateTo = jest.fn();
     const DOM = document.createElement('div');
