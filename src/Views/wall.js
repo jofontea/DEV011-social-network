@@ -8,7 +8,6 @@ import { auth } from '../config-firebase.js';
 
 let divWall;
 let publishButton;
-let postsContainer;
 
 function createInput() {
   const postInput = document.createElement('input');
@@ -126,7 +125,7 @@ async function loadComments(container, inputContainer) {
         }
       });
 
-      containerIcons.append(editButton, deleteButton, likeButton);
+      containerIcons.append(editButton, deleteButton, likeButton, likeCountSpan);
 
       postElement.appendChild(commentElement);
       postElement.appendChild(containerIcons);
@@ -163,6 +162,7 @@ export async function wall(navigateTo) {
   const logOut = document.createElement('button');
   logOut.classList.add('logOut');
   logOut.textContent = 'Cerrar sesión';
+  logOut.innerHTML = '<i class="fa-solid fa-right-to-bracket"></i>';
   logOut.addEventListener('click', async () => {
     // eslint-disable-next-line no-restricted-globals
     const alertlogOut = confirm('¿Está seguro que desea salir de su cuenta?');

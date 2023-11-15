@@ -5,6 +5,8 @@
 
 * {
   font-family: "fun-font";
+  font-weight:500;
+  font-size: 20px;
 }
 
 .container {
@@ -12,21 +14,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+  height: 100vh; 
+
 }
 
 body {
-  position: absolute;
-  max-width: 100%;
-  height: auto;
+  margin: 0;
+  font-size: 100%;
   background-image: url("../IMAGENES/background.jpeg");
-  /*background-image: url("IMAGENES/background.jpeg");*/
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  align-content: center;
-  font-size: 100%;
-  background-attachment: fixed; /* Opcional: mantiene la imagen en su lugar mientras se desplaza la página */
+  background-attachment: fixed;
+  margin-bottom: 60px;
 }
 
 #comment-input-contairner {
@@ -43,7 +43,8 @@ body {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  transform: translate(50%);
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -64,7 +65,8 @@ body {
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px #050834;
   font-weight: 700;
-  transform: translate(30%);
+  width: 100%; /* Ajusta el ancho al 100% para que sea responsive */
+  max-width: 300px; 
 
 }
 
@@ -86,7 +88,6 @@ body {
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px #050834;
   font-weight: 700;
-  transform: translate(70%);
 }
 .email,
 .password {
@@ -105,18 +106,18 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 20px;
-  transform: translate(50%);
 }
 
 .div-l,
 .div-r,
-.div-h {
+.div-h{
   flex-direction: column;
-  display: flex;
   font-family: "fun-font";
   font-size: 14px;
   align-items: center;
   justify-content: center;
+  display: flex;
+  height: 100vh; 
 
 }
 
@@ -135,7 +136,6 @@ body {
   height: 40px;
   flex-shrink: 0;
   justify-content: center;
-  transform: translate(50%);
   
 }
 .button-google img {
@@ -183,7 +183,7 @@ body {
   justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
   align-items: center; /* Centra verticalmente los elementos en el encabezado */
   font-family: 'fun-font';
- 
+
   
 }
 .logo-header-w {
@@ -221,6 +221,11 @@ body {
   color: white;
   padding: 10px;
   font-family: 'fun-font';
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
+  align-items: center; /* Centra verticalmente los elementos en el encabezado */
+
+
 }
 .comments {
   position: relative;
@@ -267,7 +272,6 @@ body {
   font-family: 'fun-font';
   margin-top: 5px;
   font-size: 32px;
-  transform: translate(90%);
 }
 
 .go-home-message{
@@ -286,7 +290,7 @@ body {
 #comment-input {
   background: linear-gradient(45deg, #7cb8f2, #3a5998); /* Degradado de azules */
   text-align: center;
-  margin: 10px;
+  margin: 10px 0px;
   padding: 5px; /*Añadido un poco de espacio de relleno para mayor comodidad */
   font-family: "fun-font";
   font-size: 16px; /* Ajustado el tamaño de la fuente */
@@ -302,42 +306,56 @@ body {
 }
 #comment-input::placeholder {
   color: #050834; /* Cambia el color del texto del placeholder aquí */
+  font-size: 20px;
 }
 #comment-input:hover {
   background: linear-gradient(45deg, #5c97d3, #2d4783); /* Cambio de color de fondo al pasar el mouse */
 }
 
-.delete {
-
-flex-direction: inherit;  
-padding: 5px;
-bottom: 0px;
+.container-icons{
+justify-content: flex-end;
+flex-direction: row;
+display: flex;
 }
-
-.like-button {
+.like-button, .edit-button, .delete {
   flex-direction: inherit;  
   padding: 5px; 
   bottom: 0px;
-
+  margin: 10px;
+justify-content: inherit;
+border-radius: 20px;
+background: none; 
+border: solid #050834 3px;
+color: #050834;
 }
-
-.edit-button {
+.like-count{
   flex-direction: inherit;  
-padding: 5px;
-bottom: 0px;
+  padding: 5px; 
+  bottom: 0px;
+  margin: 10px;
+justify-content: inherit;
+font-weight: 700;
+font-size: 18px;
 }
-
 #publish-button{
     margin: 20px;
-    background-color: #7cb8f2; /* Color de fondo */
     color: #050834; /* Color del texto */
     padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
-    border: none; /* Sin borde */
     border-radius: 9px; /* Esquinas redondeadas */
     cursor: pointer; /* Cambia el cursor al pasar el ratón */
     font-family: 'fun-font';
+    justify-content: inherit;
+    margin: 0px 10px;
+    background: linear-gradient(45deg, #D5D5D5, #7CB8F2);/* Degradado de azules */
+    border: 3px solid #050834;
+    box-shadow: 2px 3px #050834;
+  
   }
   #publish-button:hover {
     background-color: #7cb8f2;
     transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
+  
+  }
+  .div-w{
+    text-align: center;
   }

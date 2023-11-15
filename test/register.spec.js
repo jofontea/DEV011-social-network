@@ -6,11 +6,12 @@ import { register } from '../src/views/register';
 jest.mock('../src/lib/index', () => ({
   registerFirebase: jest.fn((email, password) => {
     if (email === 'pepa@gmail.com' && password === '123456') {
-      return Promise.resolve();
+      const userCredential = { user: 'pepa@gmail.com' };
+      return Promise.resolve(userCredential);
     }
     return Promise.reject();
   }),
-  validateUserExist: jest.fn(() => Promise.resolve()),
+  validateUserExist: jest.fn(() => Promise.resolve([])),
 }));
 
 describe('register', () => {
