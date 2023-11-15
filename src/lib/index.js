@@ -8,12 +8,6 @@ import {
 } from 'firebase/auth';
 import { db, collection, addDoc } from '../firestore';
 import { auth, provider } from '../config-firebase';
-
-export const myFunction = () => {
-  // aqui tu codigo
-  console.log('Hola mundo!');
-};
-
 // LOGIN USUARIOS YA REGISTRADOS
 export const loginUser = (email, password) => signInWithEmailAndPassword(auth, email, password);
 
@@ -30,9 +24,3 @@ export const createPost = (comment) => {
     comment,
   });
 };
-
-/* export const querySnapshot = getDocs(collection(db, "posts"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()}`);
-});
-*/
