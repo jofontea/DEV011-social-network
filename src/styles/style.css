@@ -8,14 +8,17 @@
 }
 
 .container {
-  /*background-color: #050834;*/
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
 }
 
 body {
+  position: absolute;
+  max-width: 100%;
+  height: auto;
   background-image: url("../IMAGENES/background.jpeg");
   /*background-image: url("IMAGENES/background.jpeg");*/
   background-position: center center;
@@ -24,6 +27,10 @@ body {
   align-content: center;
   font-size: 100%;
   background-attachment: fixed; /* Opcional: mantiene la imagen en su lugar mientras se desplaza la página */
+}
+
+#comment-input-contairner {
+  color: red;
 }
 
 
@@ -36,15 +43,15 @@ body {
   justify-content: center;
   align-items: center;
   margin: 10px;
+  transform: translate(50%);
 }
 
-.title,
-.title-r,
+
 .title-h {
-  /*background-color: #7cb8f2;*/
-  /*width: 194px;*/
+  background-color: #7cb8f2;
+  width: 194px;
   width: fit-content;
-  /*height: 62px;*/
+  height: 62px;
   flex-shrink: 0;
   border-radius: 20px;
   justify-content: center;
@@ -57,8 +64,30 @@ body {
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px #050834;
   font-weight: 700;
+  transform: translate(30%);
+
 }
 
+.title,
+.title-r {
+  background-color: #7cb8f2;
+  width: 194px;
+  width: fit-content;
+  height: 62px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: "fun-font";
+  font-size: 28px;
+  margin: 10px;
+  padding: 20px 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 5px 5px #050834;
+  font-weight: 700;
+  transform: translate(70%);
+}
 .email,
 .password {
   background-color: #050834;
@@ -76,6 +105,7 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 20px;
+  transform: translate(50%);
 }
 
 .div-l,
@@ -86,6 +116,8 @@ body {
   font-family: "fun-font";
   font-size: 14px;
   align-items: center;
+  justify-content: center;
+
 }
 
 .checking,
@@ -103,6 +135,8 @@ body {
   height: 40px;
   flex-shrink: 0;
   justify-content: center;
+  transform: translate(50%);
+  
 }
 .button-google img {
   width: 20px; /* Ajusta el ancho del logotipo según tus preferencias */
@@ -149,10 +183,13 @@ body {
   justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
   align-items: center; /* Centra verticalmente los elementos en el encabezado */
   font-family: 'fun-font';
+ 
+  
 }
 .logo-header-w {
   max-width: 100%; /* Limita el ancho de la imagen al ancho del encabezado */
   max-height: 70px; /* Limita la altura de la imagen a 100 píxeles */
+  justify-items: center;
 
 }
 .title-w {
@@ -177,13 +214,12 @@ body {
 }
 
 .footer-w {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   background-color: #050834;
   color: white;
   padding: 10px;
-  text-align: center;
-  position: fixed;
-  bottom: 0; /* Coloca el footer en la parte inferior de la ventana */
-  width: 100%; /* Ancho completo de la ventana */
   font-family: 'fun-font';
 }
 .comments {
@@ -231,6 +267,7 @@ body {
   font-family: 'fun-font';
   margin-top: 5px;
   font-size: 32px;
+  transform: translate(90%);
 }
 
 .go-home-message{
@@ -250,12 +287,12 @@ body {
   background: linear-gradient(45deg, #7cb8f2, #3a5998); /* Degradado de azules */
   text-align: center;
   margin: 10px;
-  padding: 10px; /* Añadido un poco de espacio de relleno para mayor comodidad */
+  padding: 5px; /*Añadido un poco de espacio de relleno para mayor comodidad */
   font-family: "fun-font";
   font-size: 16px; /* Ajustado el tamaño de la fuente */
   border: none;
   outline: none;
-  width: 100%; /* Ancho del 100% para ser responsive */
+  width: 90%; /* Ancho del 100% para ser responsive */
   max-width: 400px; /* Establecido un ancho máximo para evitar que se extienda demasiado en pantallas grandes */
   height: 60px; /* Ajustado la altura */
   flex-shrink: 0;
@@ -290,3 +327,17 @@ padding: 5px;
 bottom: 0px;
 }
 
+#publish-button{
+    margin: 20px;
+    background-color: #7cb8f2; /* Color de fondo */
+    color: #050834; /* Color del texto */
+    padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
+    border: none; /* Sin borde */
+    border-radius: 9px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-family: 'fun-font';
+  }
+  #publish-button:hover {
+    background-color: #7cb8f2;
+    transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
+  }
