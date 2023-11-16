@@ -2,14 +2,14 @@
 import {
   collection, getDocs, addDoc, serverTimestamp, deleteDoc, doc, updateDoc, getDoc, setDoc,
 } from 'firebase/firestore';
-import { db } from '../firestore';
+import { db } from '../firestore.js';
 import { logoutUser } from '../lib/index.js';
 import { auth } from '../config-firebase.js';
 
 let divWall;
 let publishButton;
 
-function createInput() {
+export function createInput() {
   const postInput = document.createElement('input');
   postInput.setAttribute('type', 'text');
   postInput.setAttribute('id', 'comment-input');

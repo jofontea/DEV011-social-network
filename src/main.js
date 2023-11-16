@@ -1,9 +1,9 @@
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
-import { home } from './views/home.js';
-import { login } from './views/login.js';
-import { error } from './views/error.js';
-import { register } from './views/register.js';
-import { wall } from './views/wall.js';
+import { home } from './Views/home.js';
+import { login } from './Views/login.js';
+import { error } from './Views/error.js';
+import { register } from './Views/register.js';
+import { wall } from './Views/wall.js';
 
 const routes = [
   { path: '/', component: home },
