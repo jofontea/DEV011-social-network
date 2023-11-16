@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { register } from '../src/views/register';
+import { register } from '../src/Views/register.js';
 
 jest.mock('../src/lib/index', () => ({
   registerFirebase: jest.fn((email, password) => {

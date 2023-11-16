@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import { login } from '../src/views/login.js';
+import { login } from '../src/Views/login.js';
 
 jest.mock('../src/lib/index.js', () => ({
   loginUser: jest.fn((email, password) => {
