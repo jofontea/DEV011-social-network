@@ -359,3 +359,16 @@ font-size: 18px;
   .div-w{
     text-align: center;
   }
+  .hidden {
+    display: none;
+  }
+  .alert-message{
+    color: #dc3545; /* Rojo oscuro o tu elección de color */
+    background-color: #f8d7da; /* Color de fondo claro para resaltar */
+    border: 1px solid #dc3545; /* Borde delgado rojo */
+    padding: 10px; /* Relleno interno para un aspecto más equilibrado */
+    margin-bottom: 10px; /* Margen inferior para separación de otros elementos */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  .alert-message.fade-out {
+    animation: fadeOut 0.5s ease-out forwards;}

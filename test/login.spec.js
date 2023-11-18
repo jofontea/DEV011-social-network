@@ -18,14 +18,14 @@ describe('login', () => {
     expect(typeof login).toBe('function');
   });
 
-  test('tiene un botón para logearse a al muro ', () => {
+  test('tiene un botón para logearse al muro', () => {
     const DOM = document.createElement('div');
     DOM.append(login());
     const loginButton = DOM.querySelector('.button-login');
     expect(loginButton).toBeDefined();
   });
 
-  test('lleva los datos correctos para ingresar', () => {
+  test('lleva los datos correctos para ingresar', async () => {
     const navigateTo = jest.fn();
 
     const DOM = document.createElement('div');
@@ -38,16 +38,17 @@ describe('login', () => {
 
     const loginButton = DOM.querySelector('.button-login');
     loginButton.click();
-    setTimeout(() => {
-      expect(navigateTo).toHaveBeenLastCalledWith('/wall');
-    });
+
+    // Esperar a que se resuelva la promesa antes de realizar las aserciones
+    await Promise.resolve();
+
+    expect(navigateTo).toHaveBeenCalledWith('/wall');
   });
 
-  test('llama a showAlert con el mensaje correcto al error de credenciales incorrectas', () => {
+  test('llama a mensaje credenciales incorrectas', () => {
     const navigateTo = jest.fn();
-    const showAlert = jest.fn();
     const DOM = document.createElement('div');
-    DOM.append(login(navigateTo, showAlert));
+    DOM.append(login(navigateTo));
 
     const emailInput = DOM.querySelector('.email');
     const passwordInput = DOM.querySelector('.password');
@@ -56,12 +57,14 @@ describe('login', () => {
 
     const loginButton = DOM.querySelector('.button-login');
     loginButton.click();
-    setTimeout(() => {
-      expect(showAlert).toHaveBeenCalledWith('Datos incorrectos, verifica nuevamente');
+
+    // Utilizamos `await` para esperar que las promesas se resuelvan
+    return Promise.resolve().then(() => {
+      expect(navigateTo).not.toHaveBeenCalled(); // No debería navegar a /wall
     });
   });
 
-  test('llama a loginGoogle al hacer clic en el botón de Google', () => {
+  test('llama a loginGoogle al hacer clic en el botón de Google', async () => {
     const navigateTo = jest.fn();
     const DOM = document.createElement('div');
     DOM.append(login(navigateTo));
@@ -69,8 +72,8 @@ describe('login', () => {
     const googleButton = DOM.querySelector('.button-google');
     googleButton.click();
 
-    setTimeout(() => {
-      expect(navigateTo).toHaveBeenLastCalledWith('/wall');
-    });
+    // Esperar a que se resuelva la promesa antes de realizar las aserciones
+    await Promise.resolve();
+    expect(navigateTo).toHaveBeenCalledWith('/wall');
   });
 });

@@ -21,6 +21,9 @@ export function login(navigateTo) {
   imgLogo.setAttribute('class', 'img-logo');
   const googleLogo = document.createElement('img');
   googleLogo.setAttribute('alt', 'Google Logo');
+  const errorMessageElement = document.createElement('span');
+  errorMessageElement.className = 'alert-message';
+  errorMessageElement.classList.add('hidden');
 
   googleLogo.setAttribute('src', 'IMAGENES/Google.png');
   imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
@@ -44,31 +47,30 @@ export function login(navigateTo) {
     const emailValue = inputEmail.value;
     const passwordValue = inputPass.value;
     loginUser(emailValue, passwordValue)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log('usuario registrado', user);
+      .then(() => {
         navigateTo('/wall');
       })
-      .catch((error) => {
-        const errorMessage = error.message;
-        console.log(errorMessage);
-        if (error.code === 'auth/invalid-login-credentials') {
-          alert('Datos incorrectos, verifica nuevamente');
-        }
+      .catch(() => {
+        errorMessageElement.textContent = 'Datos incorrectos, verifica nuevamente';
+        errorMessageElement.classList.remove('hidden');
+        setTimeout(() => {
+          errorMessageElement.classList.add('hidden');
+        }, 3000);
       });
   });
 
   buttonGoogle.addEventListener('click', () => {
     loginGoogle()
-      .then((result) => {
-      // The signed-in user info.
-        const user = result.user;
-        console.log(user);
+      .then(() => {
         navigateTo('/wall');
       })
       .catch((error) => {
         console.log(error);
-        alert('Datos incorrectos, verifica nuevamente.');
+        errorMessageElement.textContent = 'Datos incorrectos, verifica nuevamente';
+        errorMessageElement.classList.remove('hidden');
+        // setTimeout(() => {
+        //   errorMessageElement.classList.add('hidden');
+        // }, 3000);
       });
   });
 
@@ -81,6 +83,7 @@ export function login(navigateTo) {
     imgLogo,
     inputEmail,
     inputPass,
+    errorMessageElement,
     buttonLogin,
     buttonGoogle,
     checking,

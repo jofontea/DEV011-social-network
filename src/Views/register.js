@@ -1,4 +1,4 @@
-import { registerFirebase, validateUserExist } from '../lib/index.js';
+import { registerFirebase } from '../lib/index.js';
 
 export function register(navigateTo) {
   const section = document.createElement('section');
@@ -9,6 +9,9 @@ export function register(navigateTo) {
   const email = document.createElement('input'); email.setAttribute('id', 'email-r');
   const password = document.createElement('input'); password.setAttribute('id', 'password-r');
   const divRg = document.createElement('div'); divRg.setAttribute('class', 'div-r');
+  const errorMessageElement = document.createElement('span');
+  errorMessageElement.className = 'alert-message';
+  errorMessageElement.classList.add('hidden');
 
   text.textContent = 'Inserta tus datos aquí';
   email.placeholder = 'Correo electrónico';
@@ -19,49 +22,53 @@ export function register(navigateTo) {
   imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
   button.setAttribute('id', 'buttonlogin');
   password.setAttribute('type', 'password');
-  button.addEventListener('click', (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe
-    const emailValue = email.value;
-    const passwordValue = password.value;
-    if (passwordValue.length < 6) {
-      alert('La contraseña debe tener al menos 6 caracteres.');
-      return;
-    }
-    validateUserExist(emailValue)
-      .then((signInMethods) => {
-        if (signInMethods.length === 0) {
-          registerFirebase(emailValue, passwordValue)
-            .then((userCredential) => {
-              const user = userCredential.user;
-              // Enviar correo de confirmación
-              console.log('Usuario registrado:', user);
-              navigateTo('/login');
-            })
-            .catch((error) => {
-              console.error('Error de Autenticación de Firebase:', error);
-              if (
-                error.code === 'auth/email-already-in-use'
-              || error.code === 'auth/invalid-email'
-              ) {
-                alert(
-                  'El correo electrónico ya está en uso o es inválido. Intenta con otro correo.',
-                );
-              }
-            });
-        } else {
-          alert(
-            'El correo electrónico ya está registrado. Intenta iniciar sesión en su lugar.',
-          );
-        }
-      })
-      .catch((error) => {
-        console.error('Error al verificar el correo electrónico:', error);
-      });
+  const returnButton = document.createElement('button');
+  returnButton.setAttribute('class', 'return-button');
+  returnButton.innerHTML = '<i class="fi-rr-arrow-small-left"></i>';
+  returnButton.addEventListener('click', () => {
+    navigateTo('/login');
   });
 
-  // button.addEventListener('click', () => {
-  //   navigateTo('/login');
-  // });
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const emailValue = email.value;
+    const passwordValue = password.value;
+    registerFirebase(emailValue, passwordValue)
+      .then(() => {
+        errorMessageElement.textContent = ('Usuario registrado con exito.');
+        errorMessageElement.classList.remove('hidden');
+        setTimeout(() => {
+          navigateTo('/login');
+        }, 2000);
+      })
+      .catch((error) => {
+        if (error.code === 'auth/email-already-in-use') {
+          errorMessageElement.textContent = 'El correo electrónico ya está en uso';
+          errorMessageElement.classList.remove('hidden');
+          setTimeout(() => {
+            errorMessageElement.classList.add('hidden');
+          }, 3000);
+        } else if (error.code === 'auth/invalid-email') {
+          errorMessageElement.textContent = 'El correo electrónico es invalido';
+          errorMessageElement.classList.remove('hidden');
+          setTimeout(() => {
+            errorMessageElement.classList.add('hidden');
+          }, 3000);
+        } else if (error.code === 'auth/missing-password') {
+          errorMessageElement.textContent = 'Te falta ingresar la contraseña';
+          errorMessageElement.classList.remove('hidden');
+          setTimeout(() => {
+            errorMessageElement.classList.add('hidden');
+          }, 3000);
+        } else if (error.code === 'auth/weak-password') {
+          errorMessageElement.textContent = 'Tu contraseña debe tener al menos 6 caracteres';
+          errorMessageElement.classList.remove('hidden');
+          setTimeout(() => {
+            errorMessageElement.classList.add('hidden');
+          }, 3000);
+        }
+      });
+  });
 
   divRg.append(
     title,
@@ -69,10 +76,11 @@ export function register(navigateTo) {
     text,
     email,
     password,
+    errorMessageElement,
     button,
+    returnButton,
   );
 
   section.append(divRg);
-  // console.log(section);
   return section;
 }
