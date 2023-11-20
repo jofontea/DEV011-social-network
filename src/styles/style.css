@@ -136,11 +136,13 @@ body {
   height: 40px;
   flex-shrink: 0;
   justify-content: center;
+  cursor: pointer;
   
 }
 .button-google img {
   width: 20px; /* Ajusta el ancho del logotipo según tus preferencias */
   margin-right: 5px; /* Espacio entre el logotipo y el texto */
+  cursor: pointer;
 }
 
 .text-r {
@@ -327,7 +329,24 @@ border-radius: 20px;
 background: none; 
 border: solid #050834 3px;
 color: #050834;
+cursor: pointer;
 }
+.delete :hover {
+  
+  transform: scale(1.2); 
+  background-color: #7cb8f2;
+}
+.edit-button :hover {
+
+  transform: scale(1.2); 
+  background-color: #7cb8f2;
+}
+
+.like-button :hover {
+  transform: scale(1.2);
+  background-color: #7cb8f2;
+}
+
 .like-count{
   flex-direction: inherit;  
   padding: 5px; 
