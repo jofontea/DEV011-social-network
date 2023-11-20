@@ -22,3 +22,7 @@ export const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 export const auth = getAuth(app);// app
 export const provider = new GoogleAuthProvider();
+
+export const firebaseApp = app;
+export const firebaseAuth = auth;
+export const firebaseProvider = provider;
