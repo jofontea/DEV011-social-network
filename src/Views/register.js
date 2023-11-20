@@ -6,8 +6,8 @@ export function register(navigateTo) {
   const button = document.createElement('button'); button.setAttribute('class', 'button-send');
   const imgLogo = document.createElement('img'); imgLogo.setAttribute('class', 'img-logo');
   const text = document.createElement('h2'); text.setAttribute('class', 'text-r');
-  const email = document.createElement('input'); email.setAttribute('id', 'email-r');
-  const password = document.createElement('input'); password.setAttribute('id', 'password-r');
+  const email = document.createElement('input'); email.setAttribute('id', 'email');
+  const password = document.createElement('input'); password.setAttribute('id', 'password');
   const divRg = document.createElement('div'); divRg.setAttribute('class', 'div-r');
   const errorMessageElement = document.createElement('span');
   errorMessageElement.className = 'alert-message';

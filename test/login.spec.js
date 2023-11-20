@@ -31,8 +31,8 @@ describe('login', () => {
     const DOM = document.createElement('div');
     DOM.append(login(navigateTo));
 
-    const emailInput = DOM.querySelector('.email');
-    const passwordInput = DOM.querySelector('.password');
+    const emailInput = DOM.querySelector('#email');
+    const passwordInput = DOM.querySelector('#password');
     emailInput.value = 'pepi@gmail.com';
     passwordInput.value = '123456';
 
@@ -50,8 +50,8 @@ describe('login', () => {
     const DOM = document.createElement('div');
     DOM.append(login(navigateTo));
 
-    const emailInput = DOM.querySelector('.email');
-    const passwordInput = DOM.querySelector('.password');
+    const emailInput = DOM.querySelector('#email');
+    const passwordInput = DOM.querySelector('#password');
     emailInput.value = 'pepi@gmail.com';
     passwordInput.value = 'invalid-password';
 

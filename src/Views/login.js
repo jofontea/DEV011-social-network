@@ -10,9 +10,9 @@ export function login(navigateTo) {
   const divLogin = document.createElement('div');
   divLogin.setAttribute('class', 'div-l');
   const inputEmail = document.createElement('input');
-  inputEmail.setAttribute('class', 'email');
+  inputEmail.setAttribute('id', 'email');
   const inputPass = document.createElement('input');
-  inputPass.setAttribute('class', 'password');
+  inputPass.setAttribute('id', 'password');
   const buttonLogin = document.createElement('button');
   buttonLogin.setAttribute('class', 'button-login');
   const checking = document.createElement('button');
@@ -33,7 +33,7 @@ export function login(navigateTo) {
   inputPass.placeholder = 'Contraseña';
   buttonLogin.textContent = 'Ingresar';
   checking.textContent = 'Regístrate';
-  buttonGoogle.textContent = 'Ingresar con Google';
+  buttonGoogle.textContent = 'Ingresar con ';
 
   const returnButton = document.createElement('button');
   returnButton.setAttribute('class', 'return-button');

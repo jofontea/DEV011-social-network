@@ -31,8 +31,8 @@ describe('register', () => {
     const DOM = document.createElement('div');
     DOM.append(register(navigateTo));
 
-    const emailInput = DOM.querySelector('#email-r');
-    const passwordInput = DOM.querySelector('#password-r');
+    const emailInput = DOM.querySelector('#email');
+    const passwordInput = DOM.querySelector('#password');
     emailInput.value = 'pepa@gmail.com';
     passwordInput.value = '123456';
 

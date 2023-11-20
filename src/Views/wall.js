@@ -174,10 +174,10 @@ export async function renderComment({ postId, text }, container, inputContainer)
 
   containerIcons.append(editButton, deleteButton, likeButton, likeCountSpan);
 
-  postElement.appendChild(likeCountSpan);
+  // postElement.appendChild(likeCountSpan);
 
-  postElement.appendChild(commentElement);
-  postElement.appendChild(containerIcons);
+  postElement.append(commentElement, containerIcons);
+  // postElement.appendChild(containerIcons);
 
   container.appendChild(postElement);
 }
@@ -231,7 +231,7 @@ export async function wall(navigateTo) {
     e.preventDefault();
     await handlePublishButtonClick(postsContainer, inputContainer);
   });
-
+  // publishButton.id = PUBLISH_BUTTON_ID;
   headerWall.append(titleWall, logoHeader, logOut);
   divWall.append(headerWall, inputContainer, publishButton, postsContainer);
 

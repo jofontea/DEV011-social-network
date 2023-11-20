@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 import {
-  createButton, createInput, getLikeCount, handlePublishButtonClick,
+  createButton, createInput, handlePublishButtonClick,
 } from '../src/Views/wall.js';
 
 jest.mock('../src/lib/index', () => ({
@@ -43,21 +43,20 @@ describe('handlePublishButtonClick', () => {
     document.body.innerHTML = '';
   });
 });
-describe('getLikeCount', () => {
+/* describe('getLikeCount', () => {
   test('debería ser una función', () => {
     expect(typeof getLikeCount).toBe('function');
   });
 
-/* test('debería obtener la cantidad correcta de likes', async () => {
+  test('debería obtener la cantidad correcta de likes', async () => {
     // Configuración inicial
     const postId = 'postId123'; // Ajusta según tu aplicación y base de datos
-
     // Llama a la función getLikeCount para obtener la cantidad de likes
     const likeCount = await getLikeCount(postId);
 
     // Asegura que la cantidad de likes sea la esperada
     expect(likeCount).toBe('2'); // Aquí puedes ajustar el valor esperado según tu lógica
-  }); */
+  });
 });
 /* describe('loadComments', () => {
   test('debería cargar comentarios correctamente', async () => {

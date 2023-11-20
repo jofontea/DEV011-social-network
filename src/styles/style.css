@@ -4,9 +4,9 @@
 }
 
 * {
-  font-family: "fun-font";
-  font-weight:500;
-  font-size: 20px;
+  font-family: "fun-font", sans-serif;
+  font-weight: 500;
+  /*font-size: 20px;*/
 }
 
 .container {
@@ -14,13 +14,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; 
+  height: 100vh;
 
 }
 
 body {
   margin: 0;
-  font-size: 100%;
+  /*font-size: 100%;*/
   background-image: url("../IMAGENES/background.jpeg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -44,61 +44,55 @@ body {
   align-items: center;
   margin: 10px;
   max-width: 100%;
-  height: auto;
+  /* height: auto;*/
 }
 
 
 .title-h {
   background-color: #7cb8f2;
-  width: 194px;
-  width: fit-content;
   height: 62px;
-  flex-shrink: 0;
   border-radius: 20px;
-  justify-content: center;
   display: flex;
   align-items: center;
-  font-family: "fun-font";
   font-size: 28px;
   margin: 10px;
   padding: 20px 20px;
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px #050834;
-  font-weight: 700;
-  width: 100%; /* Ajusta el ancho al 100% para que sea responsive */
-  max-width: 300px; 
-
+  font-weight: bold;
+  /* max-width: 300px; 
+  width: fit-content;
+  font-family: "fun-font", sans-serif;
+  justify-content: center;
+  flex-shrink: 0;*/
 }
 
 .title,
 .title-r {
   background-color: #7cb8f2;
   width: 194px;
-  width: fit-content;
   height: 62px;
   flex-shrink: 0;
   border-radius: 20px;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-family: "fun-font";
-  font-size: 28px;
+  font-size: 35px;
   margin: 10px;
-  padding: 20px 20px;
-  backdrop-filter: blur(15px);
+  padding: 10px 10px;
   box-shadow: 5px 5px #050834;
-  font-weight: 700;
+  font-weight: bold;
 }
-.email,
-.password {
+
+#email,
+#password {
   background-color: #050834;
   color: white;
   box-shadow: 0px 1px 2px 0px #7cb8f2;
   text-align: center;
   margin: 10px;
   padding: 0px;
-  font-family: "fun-font";
-  font-size: 14px;
+  font-size: 20px;
   border: none;
   border-bottom: 1px solid #d5d5d5;
   outline: none;
@@ -106,18 +100,19 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 20px;
+  font-weight: bold;
 }
 
 .div-l,
 .div-r,
-.div-h{
+.div-h {
   flex-direction: column;
-  font-family: "fun-font";
-  font-size: 14px;
+  /*font-family: "fun-font", sans-serif;
+  font-size: 14px;*/
   align-items: center;
   justify-content: center;
   display: flex;
-  height: 100vh; 
+  height: 100vh;
 
 }
 
@@ -130,35 +125,39 @@ body {
   margin: 7px;
   border-radius: 20px;
   padding: 0px;
-  font-family: "fun-font";
-  font-size: 14px;
+  font-size: 20px;
   width: 150px;
   height: 40px;
+  font-weight: bold;
+  /*font-family: "fun-font", sans-serif;
   flex-shrink: 0;
-  justify-content: center;
-  
+  justify-content: center;*/
+
 }
+
 .button-google img {
-  width: 20px; /* Ajusta el ancho del logotipo según tus preferencias */
-  margin-right: 5px; /* Espacio entre el logotipo y el texto */
+  width: 20px;
+  /* Ajusta el ancho del logotipo según tus preferencias */
+  margin-right: 5px;
+  /* Espacio entre el logotipo y el texto */
 }
 
 .text-r {
-  background-color: #7cb8f2;
-  font-family: "fun-font";
-  width: 180px;
+  color: #050834;
+  width: fit-content;
   height: 50px;
   flex-shrink: 0;
   border-radius: 20px;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-size: 16px;
+  font-size: 30px;
   margin: 10px;
   padding: 0px;
+
 }
 
-#email-r,
+/*#email-r,
 #password-r {
   background-color: #050834;
   color: white;
@@ -166,7 +165,7 @@ body {
   text-align: center;
   margin: 10px;
   padding: 0px;
-  font-family: "fun-font";
+  font-family: "fun-font", sans-serif;
   font-size: 14px;
   border: none;
   border-bottom: 1px solid #d5d5d5;
@@ -175,42 +174,52 @@ body {
   height: 40px;
   flex-shrink: 0;
   border-radius: 20px;
-}
+}*/
 .header-w {
   height: 100px;
   background-color: #050834;
   display: flex;
-  justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
-  align-items: center; /* Centra verticalmente los elementos en el encabezado */
-  font-family: 'fun-font';
-
-  
+  justify-content: space-around;
+  align-items: center;
 }
+
 .logo-header-w {
-  max-width: 100%; /* Limita el ancho de la imagen al ancho del encabezado */
-  max-height: 70px; /* Limita la altura de la imagen a 100 píxeles */
+  max-width: 100%;
+  /* Limita el ancho de la imagen al ancho del encabezado */
+  max-height: 70px;
+  /* Limita la altura de la imagen a 100 píxeles */
   justify-items: center;
 
 }
+
 .title-w {
-  margin: 20px;
-  font-family: 'fun-font';
-  font-size: 35px; /* Tamaño de fuente */
-  color: #7cb8f2; /* Color del texto */
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 40px;
+  color: #7cb8f2;
 }
+
 .logOut {
   margin: 20px;
-  background-color: #7cb8f2; /* Color de fondo */
-  color: #050834; /* Color del texto */
-  padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
-  border: none; /* Sin borde */
-  border-radius: 9px; /* Esquinas redondeadas */
-  cursor: pointer; /* Cambia el cursor al pasar el ratón */
-  font-family: 'fun-font';
+  background-color: #7cb8f2;
+  /* Color de fondo */
+  color: #050834;
+  /* Color del texto */
+  padding: 10px 20px;
+  /* Relleno (ajústalo según sea necesario) */
+  border: none;
+  /* Sin borde */
+  border-radius: 9px;
+  /* Esquinas redondeadas */
+  cursor: pointer;
+  /* Cambia el cursor al pasar el ratón */
+  font-family: "fun-font", sans-serif;
 }
+
 .logOut:hover {
   background-color: #7cb8f2;
-  transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
+  transform: scale(1.1);
+  /* Cambia el color de fondo al pasar el ratón */
 }
 
 .footer-w {
@@ -220,155 +229,197 @@ body {
   background-color: #050834;
   color: white;
   padding: 10px;
-  font-family: 'fun-font';
+  font-size: 18px;
   display: flex;
-  justify-content: space-between; /* Alinea los elementos en el espacio entre ellos */
-  align-items: center; /* Centra verticalmente los elementos en el encabezado */
+  justify-content: space-between;
+  /* Alinea los elementos en el espacio entre ellos */
+  align-items: center;
+  /* Centra verticalmente los elementos en el encabezado */
 
 
 }
+
 .comments {
   position: relative;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
-  align-items: center; /* Centra el contenido horizontalmente */
+  align-items: center;
+  /* Centra el contenido horizontalmente */
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #e0e5eb; /* Un tono azul claro */
+  background-color: #e0e5eb;
+  /* Un tono azul claro */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  max-width: 100%; /* Hace que el comentario se adapte al ancho de la pantalla */
-  font-family: 'fun-font';
+  max-width: 100%;
+  /* Hace que el comentario se adapte al ancho de la pantalla */
   min-height: 100%;
+  font-size: 25px;
+  /*margin-bottom: 20px;*/
 }
+
 .comments:hover {
-  background-color: #c9d1d9; /* Cambia el color de fondo al pasar el ratón por encima */
-  transition: background-color 0.3s ease; /* Agrega una transición suave */
+  background-color: #c9d1d9;
+  /* Cambia el color de fondo al pasar el ratón por encima */
+  transition: background-color 0.3s ease;
+  /* Agrega una transición suave */
 }
-.error-message{
+
+.error-message {
   width: fit-content;
   flex-shrink: 0;
   border-radius: 20px;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-family: "fun-font";
+  font-family: "fun-font", sans-serif;
   font-size: 20px;
   margin: 10px;
   padding: 20px 20px;
   backdrop-filter: blur(15px);
   box-shadow: 5px 5px #050834;
-  font-weight: 700;
+  font-weight: bold;
 }
-.return-button{
+
+.return-button {
   margin: 20px;
-  background-color: #7cb8f2; /* Color de fondo */
-  color: #050834; /* Color del texto */
-  padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
-  border: none; /* Sin borde */
-  border-radius: 9px; /* Esquinas redondeadas */
-  cursor: pointer; /* Cambia el cursor al pasar el ratón */
-  font-family: 'fun-font';
+  background-color: #7cb8f2;
+  /* Color de fondo */
+  color: #050834;
+  /* Color del texto */
+  padding: 10px 20px;
+  /* Relleno (ajústalo según sea necesario) */
+  border: none;
+  /* Sin borde */
+  border-radius: 9px;
+  /* Esquinas redondeadas */
+  cursor: pointer;
+  /* Cambia el cursor al pasar el ratón */
+  font-family: "fun-font", sans-serif;
   margin-top: 5px;
   font-size: 32px;
 }
 
-.go-home-message{
+.go-home-message {
   width: fit-content;
   flex-shrink: 0;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-family: "fun-font";
+  font-family: "fun-font", sans-serif;
   font-size: 20px;
   margin: 10px;
   padding: 20px 20px;
-  font-weight: 700;
-  margin-bottom: 5px; 
-}
-#comment-input {
-  background: linear-gradient(45deg, #7cb8f2, #3a5998); /* Degradado de azules */
-  text-align: center;
-  margin: 10px 0px;
-  padding: 5px; /*Añadido un poco de espacio de relleno para mayor comodidad */
-  font-family: "fun-font";
-  font-size: 16px; /* Ajustado el tamaño de la fuente */
-  border: none;
-  outline: none;
-  width: 90%; /* Ancho del 100% para ser responsive */
-  max-width: 400px; /* Establecido un ancho máximo para evitar que se extienda demasiado en pantallas grandes */
-  height: 60px; /* Ajustado la altura */
-  flex-shrink: 0;
-  border-radius: 10px; /* Ajustado el radio del borde para hacerlo más redondeado */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Agregada una sutil sombra */
-  transition: background 0.3s ease; /* Transición suave para el cambio de color de fondo */
-}
-#comment-input::placeholder {
-  color: #050834; /* Cambia el color del texto del placeholder aquí */
-  font-size: 20px;
-}
-#comment-input:hover {
-  background: linear-gradient(45deg, #5c97d3, #2d4783); /* Cambio de color de fondo al pasar el mouse */
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-.container-icons{
-justify-content: flex-end;
-flex-direction: row;
-display: flex;
+#comment-input {
+  background: linear-gradient(45deg, #669bcfbf, #cbd7eed4);
+  text-align: center;
+  margin: 10px 0px;
+  padding: 5px;
+  border: solid #050834 3px;
+  outline: none;
+  width: 90%;
+  /* Ancho del 100% para ser responsive */
+  max-width: 300px;
+  /* Establecido un ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+  height: 40px;
+  /* Ajustado la altura */
+  flex-shrink: 0;
+  border-radius: 10px;
+  /* Ajustado el radio del borde para hacerlo más redondeado */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Agregada una sutil sombra */
+  transition: background 0.3s ease;
+  /* Transición suave para el cambio de color de fondo */
 }
-.like-button, .edit-button, .delete {
-  flex-direction: inherit;  
-  padding: 5px; 
+
+#comment-input::placeholder {
+  color: #050834;
+  /* Cambia el color del texto del placeholder aquí */
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#comment-input:hover {
+  background: linear-gradient(45deg, #fdfdfd47, #257767c4);
+  /* Cambio de color de fondo al pasar el mouse */
+  transform: scale(1.1);
+}
+
+.container-icons {
+  justify-content: flex-end;
+  flex-direction: row;
+  display: flex;
+  backdrop-filter: blur(20px);
+}
+
+.like-button,
+.edit-button,
+.delete {
+  flex-direction: inherit;
+  padding: 5px;
   bottom: 0px;
   margin: 10px;
-justify-content: inherit;
-border-radius: 20px;
-background: none; 
-border: solid #050834 3px;
-color: #050834;
+  justify-content: inherit;
+  border-radius: 20px;
+  background: none;
+  border: solid #050834 3px;
+  color: #050834;
 }
-.like-count{
-  flex-direction: inherit;  
-  padding: 5px; 
-  bottom: 0px;
-  margin: 10px;
-justify-content: inherit;
-font-weight: 700;
-font-size: 18px;
+
+.like-count {
+  padding: 5px 5px 5px 0px;
+  margin: 10px 10px 10px 0px;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
 }
-#publish-button{
-    margin: 20px;
-    color: #050834; /* Color del texto */
-    padding: 10px 20px; /* Relleno (ajústalo según sea necesario) */
-    border-radius: 9px; /* Esquinas redondeadas */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    font-family: 'fun-font';
-    justify-content: inherit;
-    margin: 0px 10px;
-    background: linear-gradient(45deg, #D5D5D5, #7CB8F2);/* Degradado de azules */
-    border: 3px solid #050834;
-    box-shadow: 2px 3px #050834;
-  
-  }
-  #publish-button:hover {
-    background-color: #7cb8f2;
-    transform: scale(1.1); /* Cambia el color de fondo al pasar el ratón */
-  
-  }
-  .div-w{
-    text-align: center;
-  }
-  .hidden {
-    display: none;
-  }
-  .alert-message{
-    color: #dc3545; /* Rojo oscuro o tu elección de color */
-    background-color: #f8d7da; /* Color de fondo claro para resaltar */
-    border: 1px solid #dc3545; /* Borde delgado rojo */
-    padding: 10px; /* Relleno interno para un aspecto más equilibrado */
-    margin-bottom: 10px; /* Margen inferior para separación de otros elementos */
-    border-radius: 5px; /* Bordes redondeados */
-  }
-  .alert-message.fade-out {
-    animation: fadeOut 0.5s ease-out forwards;}
+
+.publish-button {
+  color: #1d405c;
+  padding: 7px 15px;
+  border-radius: 9px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #cbd7ee7d;
+  border: 2px solid #1d405c;
+  box-shadow: 3px 3px #1d405c;
+  font-weight: bold;
+}
+
+.publish-button:hover {
+  /* background-color: #7cb8f2;*/
+  transform: scale(1.1);
+  /* Cambia el color de fondo al pasar el ratón */
+
+}
+
+.div-w {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.alert-message {
+  color: #dc3545;
+  /* Rojo oscuro o tu elección de color */
+  background-color: #f8d7da;
+  /* Color de fondo claro para resaltar */
+  border: 1px solid #dc3545;
+  /* Borde delgado rojo */
+  padding: 10px;
+  /* Relleno interno para un aspecto más equilibrado */
+  margin-bottom: 10px;
+  /* Margen inferior para separación de otros elementos */
+  border-radius: 5px;
+  /* Bordes redondeados */
+}
+
+.alert-message.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
