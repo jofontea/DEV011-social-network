@@ -21,6 +21,7 @@ export function login(navigateTo) {
   imgLogo.setAttribute('class', 'img-logo');
   const googleLogo = document.createElement('img');
   googleLogo.setAttribute('alt', 'Google Logo');
+
   const errorMessageElement = document.createElement('span');
   errorMessageElement.className = 'alert-message';
   errorMessageElement.classList.add('hidden');
@@ -64,8 +65,8 @@ export function login(navigateTo) {
       .then(() => {
         navigateTo('/wall');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        // console.log(error);
         errorMessageElement.textContent = 'Datos incorrectos, verifica nuevamente';
         errorMessageElement.classList.remove('hidden');
         // setTimeout(() => {
