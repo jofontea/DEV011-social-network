@@ -16,7 +16,7 @@ export function createInput() {
   return postInput;
 }
 
-async function loadComments(container, inputContainer) {
+export async function loadComments(container, inputContainer) {
   try {
     const querySnapshot = await getDocs(collection(db, 'posts'));
 
