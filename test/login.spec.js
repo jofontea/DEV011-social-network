@@ -42,6 +42,14 @@ describe('login', () => {
     const haveAButton = DOM.querySelector('.return-button');
     expect(haveAButton).toBeDefined();
   });
+  test('se devuelve a la pagina anterior (login)', () => {
+    const DOM = document.createElement('div');
+    const navigateTo = jest.fn();
+    DOM.append(login(navigateTo));
+    const haveAbuttonLogin = DOM.querySelector('.return-button');
+    haveAbuttonLogin.click();
+    expect(navigateTo).toHaveBeenLastCalledWith('/');
+  });
   test('lleva los datos correctos para ingresar', async () => {
     const navigateTo = jest.fn();
 
