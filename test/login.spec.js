@@ -18,13 +18,30 @@ describe('login', () => {
     expect(typeof login).toBe('function');
   });
 
-  test('tiene un botón para logearse al muro', () => {
+  test('tiene un botón para ingresar con correo electrónico y contraseña', () => {
     const DOM = document.createElement('div');
     DOM.append(login());
-    const loginButton = DOM.querySelector('.button-login');
-    expect(loginButton).toBeDefined();
+    const haveAButton = DOM.querySelector('.button-login');
+    expect(haveAButton).toBeDefined();
   });
-
+  test('tiene un botón para ingresar con cuenta de Google', () => {
+    const DOM = document.createElement('div');
+    DOM.append(login());
+    const haveAButton = DOM.querySelector('.button-google');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para completar formulario de registro', () => {
+    const DOM = document.createElement('div');
+    DOM.append(login());
+    const haveAButton = DOM.querySelector('.checking');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para volver atrás', () => {
+    const DOM = document.createElement('div');
+    DOM.append(login());
+    const haveAButton = DOM.querySelector('.return-button');
+    expect(haveAButton).toBeDefined();
+  });
   test('lleva los datos correctos para ingresar', async () => {
     const navigateTo = jest.fn();
 

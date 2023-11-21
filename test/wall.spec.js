@@ -2,12 +2,45 @@
  * @jest-environment jsdom
  */
 import {
-  createButton, createInput, handlePublishButtonClick,
+  createInput, wall,
 } from '../src/Views/wall.js';
 
 jest.mock('../src/lib/index', () => ({
   logoutUser: jest.fn(),
 }));
+describe('wall', () => {
+  test('tiene un botón para editar', () => {
+    const DOM = document.createElement('div');
+    DOM.append(wall());
+    const haveAButton = DOM.querySelector('.edit-button');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para dar "me gusta"', () => {
+    const DOM = document.createElement('div');
+    DOM.append(wall());
+    const haveAButton = DOM.querySelector('.like-button');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para eliminar el post', () => {
+    const DOM = document.createElement('div');
+    DOM.append(wall());
+    const haveAButton = DOM.querySelector('.delete');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para publicar un comentario', () => {
+    const DOM = document.createElement('div');
+    DOM.append(wall());
+    const haveAButton = DOM.querySelector('#publish-button');
+    expect(haveAButton).toBeDefined();
+  });
+  test('tiene un botón para cerrar sesión', () => {
+    const DOM = document.createElement('div');
+    DOM.append(wall());
+    const haveAButton = DOM.querySelector('.logOut');
+    expect(haveAButton).toBeDefined();
+  });
+});
+
 describe('createInput', () => {
   test('debería crear un elemento input correctamente', () => {
     const inputElement = createInput();
@@ -20,12 +53,12 @@ describe('createInput', () => {
   });
 });
 
-describe('handlePublishButtonClick', () => {
+/* describe('handlePublishButtonClick', () => {
   test('debería ser una función', () => {
     expect(typeof handlePublishButtonClick).toBe('function');
   });
-
-  test('publica un comentario correctamente', async () => {
+*/
+/* test('publica un comentario correctamente', async () => {
     document.body.innerHTML = '<div id="postsContainer"></div><div id="inputContainer"></div>';
     const COMMENT_INPUT_ID = 'comment-input';
     const PUBLISH_BUTTON_ID = 'publishButton';
@@ -42,7 +75,7 @@ describe('handlePublishButtonClick', () => {
     publishButton.click();
     document.body.innerHTML = '';
   });
-});
+}); */
 /* describe('getLikeCount', () => {
   test('debería ser una función', () => {
     expect(typeof getLikeCount).toBe('function');

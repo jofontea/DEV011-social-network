@@ -25,6 +25,12 @@ describe('register', () => {
     const sendButton = DOM.querySelector('.button-send');
     expect(sendButton).toBeDefined();
   });
+  test('tiene un botón para volver atrás', () => {
+    const DOM = document.createElement('div');
+    DOM.append(register());
+    const sendButton = DOM.querySelector('.return-button');
+    expect(sendButton).toBeDefined();
+  });
 
   test('llama a registerFirebase con los datos correctos', () => {
     const navigateTo = jest.fn();
