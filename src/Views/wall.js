@@ -4,6 +4,7 @@ import {
 import { db } from '../firestore.js';
 import { logoutUser } from '../lib/index.js';
 import { auth } from '../config-firebase.js';
+import imgLogo from '../IMAGENES/logo-fit.png';
 
 let divWall;
 let publishButton;
@@ -152,9 +153,9 @@ export async function wall(navigateTo) {
   titleWall.classList.add('title-w');
   titleWall.textContent = 'Fit Sync';
 
-  const logoHeader = document.createElement('img');
-  logoHeader.classList.add('logo-header-w');
-  logoHeader.setAttribute('src', 'IMAGENES/logo-fit.png');
+  const imgLogoElement = document.createElement('img');
+  imgLogoElement.setAttribute('id', 'logo-header-w');
+  imgLogoElement.setAttribute('src', imgLogo);
 
   const logOut = document.createElement('button');
   logOut.classList.add('logOut');
@@ -183,7 +184,7 @@ export async function wall(navigateTo) {
   const postsContainer = document.createElement('div');
   postsContainer.setAttribute('id', 'comment-div');
 
-  headerWall.append(titleWall, logoHeader, logOut);
+  headerWall.append(titleWall, imgLogoElement, logOut);
   divWall.append(headerWall, inputContainer, publishButton, postsContainer);
 
   await loadComments(postsContainer, inputContainer);
