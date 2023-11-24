@@ -34,7 +34,7 @@ body {
 }
 
 
-.img-logo {
+#img-logo {
   border-radius: 20px;
   width: 170px;
   height: 170px;
@@ -183,7 +183,7 @@ body {
   align-items: center;
 }
 
-.logo-header-w {
+#logo-header-w {
   max-width: 100%;
   /* Limita el ancho de la imagen al ancho del encabezado */
   max-height: 70px;
@@ -322,24 +322,19 @@ body {
   border: solid #050834 3px;
   outline: none;
   width: 90%;
-  /* Ancho del 100% para ser responsive */
   max-width: 300px;
-  /* Establecido un ancho máximo para evitar que se extienda demasiado en pantallas grandes */
   height: 40px;
-  /* Ajustado la altura */
   flex-shrink: 0;
   border-radius: 10px;
-  /* Ajustado el radio del borde para hacerlo más redondeado */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  /* Agregada una sutil sombra */
   transition: background 0.3s ease;
-  /* Transición suave para el cambio de color de fondo */
+  font-size: 25px;
 }
 
 #comment-input::placeholder {
   color: #050834;
   /* Cambia el color del texto del placeholder aquí */
-  font-size: 25px;
+ /* font-size: 25px;*/
   font-weight: bold;
 }
 
@@ -378,7 +373,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.publish-button {
+#publish-button {
   color: #1d405c;
   padding: 7px 15px;
   border-radius: 9px;
@@ -390,10 +385,8 @@ body {
   font-weight: bold;
 }
 
-.publish-button:hover {
-  /* background-color: #7cb8f2;*/
+#publish-button:hover {
   transform: scale(1.1);
-  /* Cambia el color de fondo al pasar el ratón */
 
 }
 
@@ -407,19 +400,20 @@ body {
 
 .alert-message {
   color: #dc3545;
-  /* Rojo oscuro o tu elección de color */
   background-color: #f8d7da;
-  /* Color de fondo claro para resaltar */
   border: 1px solid #dc3545;
-  /* Borde delgado rojo */
   padding: 10px;
-  /* Relleno interno para un aspecto más equilibrado */
   margin-bottom: 10px;
-  /* Margen inferior para separación de otros elementos */
   border-radius: 5px;
-  /* Bordes redondeados */
 }
 
 .alert-message.fade-out {
   animation: fadeOut 0.5s ease-out forwards;
+}
+.fa-google {
+  font-size: 20px;
+  color: transparent;
+  background: linear-gradient(to right, #2E5E9B, #1E8E3E, #D3A100, #D93025);
+  -webkit-background-clip: text; 
+
 }

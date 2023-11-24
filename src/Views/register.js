@@ -1,10 +1,12 @@
 import { registerFirebase } from '../lib/index.js';
+import imgLogo from '../IMAGENES/logo-fit.png';
 
 export function register(navigateTo) {
   const section = document.createElement('section');
   const title = document.createElement('h2'); title.setAttribute('class', 'title-r');
   const button = document.createElement('button'); button.setAttribute('class', 'button-send');
-  const imgLogo = document.createElement('img'); imgLogo.setAttribute('class', 'img-logo');
+  const imgLogoElement = document.createElement('img');
+
   const text = document.createElement('h2'); text.setAttribute('class', 'text-r');
   const email = document.createElement('input'); email.setAttribute('id', 'email');
   const password = document.createElement('input'); password.setAttribute('id', 'password');
@@ -19,7 +21,8 @@ export function register(navigateTo) {
   button.textContent = 'Enviar datos';
   title.textContent = 'Fit Sync';
 
-  imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
+  imgLogoElement.setAttribute('id', 'img-logo');
+  imgLogoElement.setAttribute('src', imgLogo);
   button.setAttribute('id', 'buttonlogin');
   password.setAttribute('type', 'password');
   const returnButton = document.createElement('button');
@@ -72,7 +75,7 @@ export function register(navigateTo) {
 
   divRg.append(
     title,
-    imgLogo,
+    imgLogoElement,
     text,
     email,
     password,

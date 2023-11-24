@@ -1,4 +1,5 @@
 import { loginGoogle, loginUser } from '../lib/index.js';
+import imgLogo from '../IMAGENES/logo-fit.png';
 
 export function login(navigateTo) {
   const section = document.createElement('section');
@@ -17,16 +18,20 @@ export function login(navigateTo) {
   buttonLogin.setAttribute('class', 'button-login');
   const checking = document.createElement('button');
   checking.setAttribute('class', 'checking');
-  const imgLogo = document.createElement('img');
-  imgLogo.setAttribute('class', 'img-logo');
-  const googleLogo = document.createElement('img');
-  googleLogo.setAttribute('alt', 'Google Logo');
+  const imgLogoElement = document.createElement('img');
+  imgLogoElement.setAttribute('id', 'img-logo');
+  imgLogoElement.setAttribute('src', imgLogo);
+
+  const googleLogo = document.createElement('i');
+  googleLogo.className = 'fa-brands fa-google';
+  googleLogo.setAttribute('id', 'google-logo');
+
   const errorMessageElement = document.createElement('span');
   errorMessageElement.className = 'alert-message';
   errorMessageElement.classList.add('hidden');
 
-  googleLogo.setAttribute('src', 'IMAGENES/Google.png');
-  imgLogo.setAttribute('src', 'IMAGENES/logo-fit.png');
+  googleLogo.setAttribute('src', googleLogo);
+
   inputPass.setAttribute('type', 'password');
   title.textContent = 'Fit Sync';
   inputEmail.placeholder = 'Correo electrónico';
@@ -64,8 +69,8 @@ export function login(navigateTo) {
       .then(() => {
         navigateTo('/wall');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
+        // console.log(error);
         errorMessageElement.textContent = 'Datos incorrectos, verifica nuevamente';
         errorMessageElement.classList.remove('hidden');
         // setTimeout(() => {
@@ -80,7 +85,7 @@ export function login(navigateTo) {
 
   buttonGoogle.appendChild(googleLogo);
   divLogin.append(
-    imgLogo,
+    imgLogoElement,
     inputEmail,
     inputPass,
     errorMessageElement,
