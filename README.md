@@ -42,14 +42,22 @@ Los resultados han proporcionado información que guiará el diseño y desarroll
 ### 5. Prototipo de baja de fidelidad
 ![Prototipo de baja fidelidad](./src/IMAGENES/prototipo-baja.png)
 
-### 5. Prototipo de alta de fidelidad
+### 6. Prototipo de alta de fidelidad
 ![Prototipo de alta fidelidad](./src/IMAGENES/prototipo-alta.png)
 
-## Instrucciones de Despliegue
+### 7. Testeos de usabilidad 
 
-1. Clona este repositorio.
-2. Abre el proyecto en tu entorno de desarrollo.
-3. Configura la base de datos Firebase con las credenciales correspondientes.
-4. Ejecuta la aplicación y comienza a disfrutar de FIT SYNC.
+Se llevó a cabo una encuesta para recopilar información sobre la experiencia de los usuarios al utilizar la aplicación, la cual arrojó resultados positivos en cuanto a la interacción de las personas con la app. Se observó que no se encontraron errores al momento de crear una cuenta, publicar un comentario y realizar interacciones como dar "me gusta", editar o eliminar comentarios.
 
-¡Únete a nuestra comunidad y sincroniza tu estilo de vida activo con FIT SYNC!
+La encuesta también reveló la necesidad de implementar mejoras futuras, como ocultar el ID del comentario, ya que afecta la experiencia visual de los usuarios. Además, se sugiere la posibilidad de restringir la capacidad de eliminar comentarios, permitiendo únicamente a los usuarios eliminar aquellos que ellos mismos hayan creado.
+
+A continuación, se presentan los resultados de las preguntas realizadas en la encuesta:
+
+![Pregunta 1](./src/IMAGENES/pregunta-01.png)
+![Pregunta 2](./src/IMAGENES/pregunta-02.png)
+![Pregunta 3](./src/IMAGENES/pregunta-03.png)
+![Pregunta 4](./src/IMAGENES/pregunta-04.png)
+![Pregunta 5](./src/IMAGENES/pregunta-05.png)
+![Pregunta 6](./src/IMAGENES/pregunta-06.png)
+![Pregunta 7](./src/IMAGENES/pregunta-07.png)
+![Pregunta 8](./src/IMAGENES/pregunta-08.png)
