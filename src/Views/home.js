@@ -1,5 +1,5 @@
-import imgLogo from '../IMAGENES/logo-fit.png';
-
+// import imgLogo from '../IMAGENES/logo-fit.png';
+const imgLogo = '../IMAGENES/logo-fit.png';
 export function home(navigateTo) {
   const divHome = document.createElement('div');
   divHome.setAttribute('class', 'div-h');

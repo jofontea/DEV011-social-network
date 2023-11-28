@@ -10,9 +10,9 @@ FIT SYNC se construye como una Aplicación de Página Única (SPA) con capacidad
 
 ## Historias de Usuario
 
-Hemos realizado una encuesta para recopilar opiniones sobre las preferencias de los usuarios en relación a nuestro proyecto.
-https://forms.gle/Y6FYio8oDXUgaY726
-Los resultados han proporcionado información que guiará el diseño y desarrollo de nuestra plataforma.
+Realizamos una encuesta para recopilar opiniones sobre las preferencias de los usuarios en relación con nuestro proyecto. Puedes ver los resultados [aquí](https://forms.gle/Y6FYio8oDXUgaY726). Estos resultados han proporcionado información valiosa que guiará el diseño y desarrollo continuo de nuestra plataforma.
+
+Entre los hallazgos más significativos se destaca el interés predominante en temáticas relacionadas con la vida saludable y el fitness. Además, se identificó un fuerte deseo por la capacidad de expresar aprecio mediante la función de "Me gusta" en cada publicación. Estos insights proporcionarán una base sólida para perfeccionar la experiencia de usuario y enriquecer las funcionalidades de la plataforma.
 
 ### 1. Registro de Usuario
 #### Historia de Usuario 1
@@ -38,14 +38,18 @@ Los resultados han proporcionado información que guiará el diseño y desarroll
 **Quiero:** Ser capaz de dar “me gusta” a los posts y también de quitarlos  
 **Para:** Interactuar con otros usuarios
 
+### 5. Atractivo Visual
+Ambos prototipos están diseñados con un enfoque en el atractivo visual para cautivar a los usuarios. El prototipo de baja fidelidad, a pesar de su simplicidad, presenta una disposición clara y funcionalidad básica. Por otro lado, el prototipo de alta fidelidad se destaca por su diseño pulido, colores vibrantes y elementos visuales llamativos, proporcionando una experiencia visual atractiva y agradable.
+
+Estos prototipos trabajan en conjunto para garantizar que FIT SYNC no solo sea funcional y fácil de usar, sino también visualmente atractivo, creando así una experiencia completa y satisfactoria para las usuarias.
   
-### 5. Prototipo de baja de fidelidad
+### 6. Prototipo de baja de fidelidad
 ![Prototipo de baja fidelidad](./src/IMAGENES/prototipo-baja.png)
 
-### 6. Prototipo de alta de fidelidad
+### 7. Prototipo de alta de fidelidad
 ![Prototipo de alta fidelidad](./src/IMAGENES/prototipo-alta.png)
 
-### 7. Testeos de usabilidad 
+### 8. Testeos de usabilidad 
 
 Se llevó a cabo una encuesta para recopilar información sobre la experiencia de los usuarios al utilizar la aplicación, la cual arrojó resultados positivos en cuanto a la interacción de las personas con la app. Se observó que no se encontraron errores al momento de crear una cuenta, publicar un comentario y realizar interacciones como dar "me gusta", editar o eliminar comentarios.
 

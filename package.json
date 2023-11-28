@@ -45,5 +45,12 @@
   },
   "dependencies": {
     "firebase": "^10.6.0"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "\\.pnp\\.[^\\/]+$",
+      "logo-fit\\.png"
+    ]
   }
 }

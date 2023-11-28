@@ -4,8 +4,8 @@ import {
 import { db } from '../firestore.js';
 import { logoutUser } from '../lib/index.js';
 import { auth } from '../config-firebase.js';
-import imgLogo from '../IMAGENES/logo-fit.png';
-
+// import imgLogo from '../IMAGENES/logo-fit.png';
+const imgLogo = '../IMAGENES/logo-fit.png';
 let divWall;
 let publishButton;
 export function createInput() {

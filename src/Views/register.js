@@ -1,6 +1,6 @@
 import { registerFirebase } from '../lib/index.js';
-import imgLogo from '../IMAGENES/logo-fit.png';
-
+// import imgLogo from '../IMAGENES/logo-fit.png';
+const imgLogo = '../IMAGENES/logo-fit.png';
 export function register(navigateTo) {
   const section = document.createElement('section');
   const title = document.createElement('h2'); title.setAttribute('class', 'title-r');
